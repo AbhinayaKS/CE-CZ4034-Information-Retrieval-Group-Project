@@ -1,8 +1,10 @@
 import React, { useState,useEffect } from 'react';
 import axios from 'axios';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import { DateRange } from 'react-date-range';
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 import './App.css';
+import ResultComponent from './result';
 
 function App() {
 
@@ -11,8 +13,17 @@ function App() {
   const [query, setQuery] = useState('');
   const [condition, setCondition] = useState([]);
   const [results, setResults] = useState([]);
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [dateCondition, setDateCondition] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: 'selection'
+    }
+  ]);
+
+  useEffect(() => {
+    console.log("dateCondition", dateCondition);
+  }, [dateCondition]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
@@ -51,10 +62,7 @@ function App() {
    }, [condition]);
 
 
-   // Calculate the number of pages
   const numberOfPages = Math.ceil(filteredResults.length / itemsPerPage);
-
-  // Get the current page's data
   const getPageData = () => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -63,12 +71,6 @@ function App() {
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
-  };
-
-  const handleDateChange = (dates) => {
-    const [start, end] = dates;
-    setStartDate(start);
-    setEndDate(end);
   };
 
   const handleConditionChange = (e) => {
@@ -98,86 +100,54 @@ function App() {
         <h1>IMDB DATA</h1>
       </div>
       <div className='section1'>
-      <h2>IMDb Search</h2>
-      <div>
-        <form onSubmit={submit}>
-          <div>
+        <h2>IMDb Search</h2>
+        <div>
+          <form onSubmit={submit}>
             <div>
-              <input type="text" name="search_text" id="search_text" className="form-control" placeholder="Enter your query..." value={query} onChange={handleInputChange}/>
+              <div>
+                <input type="text" name="search_text" id="search_text" className="form-control" placeholder="Enter your query..." value={query} onChange={handleInputChange}/>
+              </div>
+              <div>
+              </div>
             </div>
-            <div>
+          </form>
+        </div>
+        <div>
+          <h4>Movie genres</h4>
+          <div className='genres_container'>
+            {movieGenres.map((genre) => {
+            return (
+              <div class="form-check" key={genre}>
+              <input class="form-check-input" type="checkbox"  value={genre} id={genre} onChange={(e) => handleConditionChange(e)}/>
+              <label class="form-check-label" htmlFor={genre}>
+                {genre}
+              </label>
             </div>
+            )
+            })}
           </div>
-        </form>
-      </div>
-      <div>
-        <h4>Movie genres</h4>
-        <div className='genres_container'>
-          {movieGenres.map((genre) => {
+        </div>
+        <div>
+          <h4>Movie Date</h4>
+          <div>
+          <DateRange editableDateInputs={true} onChange={item => setDateCondition([item.selection])} moveRangeOnFirstSelection={false} ranges={dateCondition} />
+          </div>
+        </div>
+        <div>
+          <h4>Production Company</h4>
+          {production_Company.map((element) => {
           return (
-            <div class="form-check" key={genre}>
-            <input class="form-check-input" type="checkbox"  value={genre} id={genre} onChange={(e) => handleConditionChange(e)}/>
-            <label class="form-check-label" htmlFor={genre}>
-              {genre}
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <label class="form-check-label" for="flexCheckDefault">
+              {element}
             </label>
           </div>
           )
           })}
         </div>
       </div>
-      <div>
-        <h4>Movie Date</h4>
-        <div>
-          <DatePicker
-            selected={startDate ? [startDate, endDate] : null}
-            onChange={handleDateChange}
-            startDate={startDate}
-            endDate={endDate}
-            selectsRange
-            inline
-          />
-        </div>
-      </div>
-      <div>
-        <h4>Production Company</h4>
-        {production_Company.map((element) => {
-        return (
-          <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-          <label class="form-check-label" for="flexCheckDefault">
-            {element}
-          </label>
-        </div>
-        )
-        })}
-      </div>
-
-      </div>
-      <div className='section2'>
-        <div className="row">
-          {getPageData().map((item, index) => (
-            <div className="box" key={index}>
-              <h1>{item.title}</h1>
-              <h1>{item.genres}</h1>
-            </div>
-          ))}
-        </div>
-        <nav>
-          <ul className="pagination">
-            <li className={`page-item${currentPage === 1 ? ' disabled' : ''}`}>
-              <button className="page-link" onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
-            </li>
-            {Array(numberOfPages).fill().map((_, i) => (
-              <li className={`page-item${i + 1 === currentPage ? ' active' : ''}`} key={i}>
-                <button className="page-link" onClick={() => setCurrentPage(i + 1)}>{i + 1}</button>
-              </li>
-            ))}
-            <li className={`page-item${currentPage === numberOfPages ? ' disabled' : ''}`}>
-              <button className="page-link" onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <ResultComponent data={filteredResults} />
     </div>
   );
 }
