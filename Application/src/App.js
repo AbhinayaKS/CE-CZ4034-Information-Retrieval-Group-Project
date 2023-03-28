@@ -30,38 +30,34 @@ function App() {
 
   const production_Company = ["A","B","C"]
 
-  let dataResult = [{"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
-                      {"Movie_Name":"Movie A1","genres":"A,B,C,D,E"},
-                      {"Movie_Name":"Movie A2","genres":"A,B,C,D,E"},
-                      {"Movie_Name":"Movie A3","genres":"A,B,C,D,E"},
-                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
-                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
-                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
-                      {"Movie_Name":"Movie A4","genres":"A,B,C,D,E"},
-                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
-                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
-                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
-                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"}]
   movieGenres.sort((a, b) => a.localeCompare(b));
 
    // State variable for filtered results
-   const [filteredResults, setFilteredResults] = useState(dataResult);
+   const [filteredResults, setFilteredResults] = useState([]);
+
+   useEffect(() => {
+    if (results) {
+      setFilteredResults(results);  
+    }
+  }, [results]);
+
 
    // Filter results based on query state variable
    useEffect(() => {
      if (condition) {
       console.log(condition)
-       const filteredData = dataResult.filter((item) => {
+       const filteredData = results.filter((item) => {
          return item.Movie_Name.toLowerCase().includes(condition);
        });
-       setFilteredResults(filteredData);
+       setFilteredResults(filteredData);  
      } else {
-       setFilteredResults(dataResult);
+       setFilteredResults(results);
      }
    }, [condition]);
 
 
   const handleInputChange = (event) => {
+    console.log(query)
     setQuery(event.target.value);
   };
 
@@ -82,9 +78,6 @@ function App() {
         `http://localhost:8983/solr/movies/select?indent=true&q.op=OR&q=Movie_Name%3A${query}&useParams=`
       );
       setResults(response.data.response.docs);
-      dataResult = response.data.response.docs
-      console.log("dataResult",dataResult)
-      console.log("result",results)
     } catch (error) {
       console.log(query);
       console.error(error);
