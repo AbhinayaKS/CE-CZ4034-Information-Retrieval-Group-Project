@@ -25,26 +25,23 @@ function App() {
     console.log("dateCondition", dateCondition);
   }, [dateCondition]);
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
-
-  const movieGenres = [ "Action","Adventure","Animation","Comedy","Crime","Thriller","Fantasy","Science Fiction","Comedy","Drama",
+  const movieGenres = [ "Action","Adventure","Animation","Comedy","Crime","Thriller","Fantasy","Science Fiction","Drama",
                         "Family","Mystery","Horror","Romance","History","War","Western"]
 
   const production_Company = ["A","B","C"]
 
-  const dataResult = [{"title":"Movie A","genres":"A,B,C,D,E"},
-                      {"title":"Movie A1","genres":"A,B,C,D,E"},
-                      {"title":"Movie A2","genres":"A,B,C,D,E"},
-                      {"title":"Movie A3","genres":"A,B,C,D,E"},
-                      {"title":"Movie A","genres":"A,B,C,D,E"},
-                      {"title":"Movie A","genres":"A,B,C,D,E"},
-                      {"title":"Movie A","genres":"A,B,C,D,E"},
-                      {"title":"Movie A4","genres":"A,B,C,D,E"},
-                      {"title":"Movie A","genres":"A,B,C,D,E"},
-                      {"title":"Movie A","genres":"A,B,C,D,E"},
-                      {"title":"Movie A","genres":"A,B,C,D,E"},
-                      {"title":"Movie A","genres":"A,B,C,D,E"}]
+  let dataResult = [{"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
+                      {"Movie_Name":"Movie A1","genres":"A,B,C,D,E"},
+                      {"Movie_Name":"Movie A2","genres":"A,B,C,D,E"},
+                      {"Movie_Name":"Movie A3","genres":"A,B,C,D,E"},
+                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
+                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
+                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
+                      {"Movie_Name":"Movie A4","genres":"A,B,C,D,E"},
+                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
+                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
+                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"},
+                      {"Movie_Name":"Movie A","genres":"A,B,C,D,E"}]
   movieGenres.sort((a, b) => a.localeCompare(b));
 
    // State variable for filtered results
@@ -55,7 +52,7 @@ function App() {
      if (condition) {
       console.log(condition)
        const filteredData = dataResult.filter((item) => {
-         return item.title.toLowerCase().includes(condition);
+         return item.Movie_Name.toLowerCase().includes(condition);
        });
        setFilteredResults(filteredData);
      } else {
@@ -63,13 +60,6 @@ function App() {
      }
    }, [condition]);
 
-
-  const numberOfPages = Math.ceil(filteredResults.length / itemsPerPage);
-  const getPageData = () => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    return filteredResults.slice(startIndex, endIndex);
-  }
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
@@ -85,16 +75,21 @@ function App() {
     }
   }
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     try {
-      const response = axios.post('/url', { query});
-      setResults(response.data);
+      const response = await axios.get(
+        `http://localhost:8983/solr/movies/select?indent=true&q.op=OR&q=Movie_Name%3A${query}&useParams=`
+      );
+      setResults(response.data.response.docs);
+      dataResult = response.data.response.docs
+      console.log("dataResult",dataResult)
+      console.log("result",results)
     } catch (error) {
-      console.log(query)
+      console.log(query);
       console.error(error);
     }
-  }
+  };
 
   return (
     <div className="container">

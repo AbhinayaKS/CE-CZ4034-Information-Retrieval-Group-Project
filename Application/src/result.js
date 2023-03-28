@@ -19,8 +19,7 @@ return(
         <div className="row">
           {getPageData().map((item, index) => (
             <div className="box" key={index}>
-              <h1>{item.title}</h1>
-              <h1>{item.genres}</h1>
+              <h1>{item.Movie_Name}</h1>
             </div>
           ))}
         </div>
