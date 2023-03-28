@@ -28,7 +28,9 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
-  const movieGenres = ["Action","Adventure","Animation","Crime","Thriller","Fantasy","Science Fiction","Comedy","Drama","Family","Mystery","Horror","Romance","History","War"]
+  const movieGenres = [ "Action","Adventure","Animation","Comedy","Crime","Thriller","Fantasy","Science Fiction","Comedy","Drama",
+                        "Family","Mystery","Horror","Romance","History","War","Western"]
+
   const production_Company = ["A","B","C"]
 
   const dataResult = [{"title":"Movie A","genres":"A,B,C,D,E"},
@@ -104,7 +106,7 @@ function App() {
         <div>
           <form onSubmit={submit}>
             <div>
-              <div>
+              <div className='search-bar'>
                 <input type="text" name="search_text" id="search_text" className="form-control" placeholder="Enter your query..." value={query} onChange={handleInputChange}/>
               </div>
               <div>

@@ -40,6 +40,8 @@
 .container {
   display: flex;
   width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 .header {
@@ -48,12 +50,13 @@
 }
 
 .section1 {
-  width: 20%;
+  width: 30%;
   background-color: white;
   position: fixed;
   top: 10%;
   left: 0;
   padding: 30px;
+  overflow: auto;
 }
 
 .genres_container {
@@ -64,12 +67,17 @@
 }
 
 .section2 {
-  width: 80%;
+  width: 70%;
   top: 10%;
+  right: 0%;
   position: fixed;
   background-color: white;
   max-height: 80%;
   overflow-y: auto;
+}
+
+.search-bar {
+  width: 60%;
 }
 
 .result-container {
