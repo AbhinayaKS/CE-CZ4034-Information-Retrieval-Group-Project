@@ -21,6 +21,10 @@ export default function ResultComponent({data}) {
       const endIndex = startIndex + itemsPerPage;
       return dataResult.slice(startIndex, endIndex);
   }
+  
+  useEffect(()=>{
+    setCurrentPage(1)
+  },[data])
 
 return(
     <div className='section2'>
@@ -29,12 +33,12 @@ return(
         <Table sx={{ minWidth: 650 }} aria-label='simple table'>
           <TableHead>
             <TableRow>
-              <TableCell>Movie Name</TableCell>
-              <TableCell>Genres</TableCell>
-              <TableCell >Rating</TableCell>
-              <TableCell>Production Company</TableCell>
-              <TableCell>Release Date</TableCell>
-              <TableCell sx={{width:500}}>Review</TableCell>
+              <TableCell sx={{width:200}}>Movie Name</TableCell>
+              <TableCell sx={{width:200}}>Genres</TableCell>
+              <TableCell sx={{width:120}}>Rating</TableCell>
+              <TableCell sx={{width:200}}>Production Company</TableCell>
+              <TableCell sx={{width:100}}>Release Date</TableCell>
+              <TableCell>Review</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
