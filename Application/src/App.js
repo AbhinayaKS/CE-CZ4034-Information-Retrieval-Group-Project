@@ -153,8 +153,8 @@ function App() {
               input={<OutlinedInput label="Genre" />}
             >
               {genre.map((g) => (
-                <MenuItem key={g} value={g}>
-                  {g}
+                <MenuItem key={g.val} value={g.val}>
+                  {g.val}
                 </MenuItem>
               ))}
             </Select>
