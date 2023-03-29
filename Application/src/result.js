@@ -31,10 +31,10 @@ return(
             <TableRow>
               <TableCell>Movie Name</TableCell>
               <TableCell>Genres</TableCell>
-              <TableCell >tmdb Rating<br/>User Rating</TableCell>
+              <TableCell >Rating</TableCell>
               <TableCell>Production Company</TableCell>
               <TableCell>Release Date</TableCell>
-              <TableCell>Review</TableCell>
+              <TableCell sx={{width:500}}>Review</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -46,7 +46,7 @@ return(
                 <TableCell align='left'>{item.Genre_s_.map((genre)=>{
                   return (genre)
                 })}</TableCell>
-                <TableCell align='left'>{item.tmdb_Rating}<br/>{item.User_Rating}</TableCell>
+                <TableCell align='left'><span>tmdb: {item.tmdb_Rating}</span><br/><span>user: {item.User_Rating}</span></TableCell>
                 <TableCell align='left'>{item.Production_Company}</TableCell>
                 <TableCell align='left'>{new Date(item.Release_Date).toLocaleDateString()}</TableCell>
                 <TableCell align="left"><Review text={item.Review_Content} maxLength={50} /></TableCell>
