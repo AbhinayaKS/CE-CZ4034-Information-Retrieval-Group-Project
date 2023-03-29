@@ -1,33 +1,44 @@
-import React, { useState,useEffect } from 'react';
-import axios from 'axios';
-import { DateRange } from 'react-date-range';
-import 'react-date-range/dist/styles.css'; // main style file
-import 'react-date-range/dist/theme/default.css'; // theme css file
-import './App.css';
-import ResultComponent from './result';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { DateRange } from "react-date-range";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import "./App.css";
+import ResultComponent from "./result";
+import {
+  TextField,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  OutlinedInput,
+} from "@mui/material";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 function App() {
+  const genres_url =
+    "http://localhost:8983/solr/movie/select?q=*:*&facet.field={!key=distinctGenre}distinctGenre&facet=on&rows=0&wt=json&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}";
 
-  const genres_url = 'http://localhost:8983/solr/movie/select?q=*:*&facet.field={!key=distinctGenre}distinctGenre&facet=on&rows=0&wt=json&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}'
-  
+  const [query, setQuery] = useState("");
+  const [filteredGenre, setFilteredGenre] = useState([]);
+  const [filteredCompany, setFilteredCompany] = useState([]);
+  const [genre, setGenre] = useState([]);
 
-  const [query, setQuery] = useState('');
-  const [genre,setGenre] = useState([])
-  const [condition, setCondition] = useState(
-    {
-      genre:[],
-      startDate: new Date(),
-      endDate: new Date(),
-      prod_Company:''
-    }
-    );
+  const [condition, setCondition] = useState({
+    genre: [],
+    startDate: new Date(),
+    endDate: new Date(),
+    prod_Company: "",
+  });
   const [results, setResults] = useState([]);
   const [dateCondition, setDateCondition] = useState([
     {
       startDate: new Date(),
       endDate: new Date(),
-      key: 'selection'
-    }
+      key: "selection",
+    },
   ]);
 
   async function fetchGenre() {
@@ -36,59 +47,67 @@ function App() {
     setGenre(data);
   }
 
-  useEffect(()=>{
-    fetchGenre()
-  },[])
+  useEffect(() => {
+    fetchGenre();
+  }, []);
 
   useEffect(() => {
     console.log("dateCondition", dateCondition);
   }, [dateCondition]);
 
-  const production_Company = ["A","B","C"]
+  const production_Company = ["A", "B", "C"];
 
-   // State variable for filtered results
-   const [filteredResults, setFilteredResults] = useState([]);
+  // State variable for filtered results
+  const [filteredResults, setFilteredResults] = useState([]);
 
-   useEffect(() => {
+  useEffect(() => {
     if (results) {
-      setFilteredResults(results);  
+      setFilteredResults(results);
     }
   }, [results]);
 
-
-   // Filter results based on query state variable
+  // Filter results based on query state variable
   //  useEffect(() => {
   //    if (condition) {
   //     console.log(condition)
   //      const filteredData = filteredResults.filter((item) => {
   //        return (item.Movie_Name).toLowerCase().includes(condition);
   //      });
-  //      setFilteredResults(filteredData);  
+  //      setFilteredResults(filteredData);
   //    } else {
   //      setFilteredResults(results);
   //    }
   //  }, [condition]);
 
-  useEffect(()=>{
-    console.log(condition)
-  },[condition])
+  useEffect(() => {
+    console.log(condition);
+  }, [condition]);
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
 
-  const handleGenreConditionChange = (e) => {
-    const genre = e.target.value;
-    const isChecked = e.target.checked;
+  const handleGenreConditionChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    const filteredSelection =
+      typeof value === "string" ? value.split(",") : value;
+    setFilteredGenre(filteredSelection);
     setCondition((prevState) => {
-      if (isChecked) {
-        return { ...prevState, genre: [...prevState.genre, genre] };
-      } else {
-        return {
-          ...prevState,
-          genre: prevState.genre.filter((g) => g !== genre),
-        };
-      }
+      return { ...prevState, genre: [filteredSelection] };
+    });
+  };
+
+  const handleCompanyConditionChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    const filteredSelection =
+      typeof value === "string" ? value.split(",") : value;
+    setFilteredCompany(filteredSelection);
+    setCondition((prevState) => {
+      return { ...prevState, prod_Company: [filteredSelection] };
     });
   };
 
@@ -108,56 +127,69 @@ function App() {
 
   return (
     <div className="container">
-      <div className='header'>
+      <div className="header">
         <h1>IMDB DATA</h1>
-      </div>
-      <div className='section1'>
-        <h2>IMDb Search</h2>
-        <div>
-          <form onSubmit={submit}>
-            <div>
-              <div className='search-bar'>
-                <input type="text" name="search_text" id="search_text" className="form-control" placeholder="Enter your query..." value={query} onChange={handleInputChange}/>
-              </div>
-              <div>
-              </div>
-            </div>
+        <div className="d-flex">
+          {/* Search bar */}
+          <form onSubmit={submit} style={{ width: "40%" }}>
+            <TextField
+              id="movie-search"
+              label="Search movie"
+              type="search"
+              value={query}
+              onChange={handleInputChange}
+              style={{ width: "100%" }}
+            />
           </form>
-        </div>
-        <div>
-          <h4>Movie genres</h4>
-          <div className='genres_container'>
-            {genre.map((genre) => {
-            return (
-              <div class="form-check" key={genre}>
-              <input class="form-check-input" type="checkbox"  value={genre.val} id={genre.val} onChange={(e) => handleGenreConditionChange(e)}/>
-              <label class="form-check-label">{genre.val}</label>
-            </div>
-            )
-            })}
+          {/* Genre filter */}
+          <FormControl style={{ marginLeft: "1%", width: "20%" }}>
+            <InputLabel id="movie-genre-label">Genre</InputLabel>
+            <Select
+              labelId="movie-genre-label"
+              id="movie-genre"
+              multiple
+              value={filteredGenre}
+              onChange={handleGenreConditionChange}
+              input={<OutlinedInput label="Genre" />}
+            >
+              {genre.map((g) => (
+                <MenuItem key={g} value={g}>
+                  {g}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          {/* Date */}
+          <div style={{ marginLeft: "1%", width: "20%" }}>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DatePicker
+                label={"Release Year"}
+                views={["year"]}
+                onChange={(item) => setDateCondition([item.selection])}
+              />
+            </LocalizationProvider>
           </div>
+          {/* Company filter */}
+          <FormControl style={{ marginLeft: "1%", width: "20%" }}>
+            <InputLabel id="company-label">Company</InputLabel>
+            <Select
+              labelId="company-label"
+              id="company"
+              multiple
+              value={filteredCompany}
+              onChange={handleCompanyConditionChange}
+              input={<OutlinedInput label="Company" />}
+            >
+              {production_Company.map((c) => (
+                <MenuItem key={c} value={c}>
+                  {c}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
         </div>
-        <div>
-          <h4>Movie Date</h4>
-          <div>
-          <DateRange editableDateInputs={true} onChange={item => setDateCondition([item.selection])} moveRangeOnFirstSelection={false} ranges={dateCondition} />
-          </div>
-        </div>
-        <div>
-          <h4>Production Company</h4>
-          {production_Company.map((element) => {
-          return (
-            <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-            <label class="form-check-label" for="flexCheckDefault">
-              {element}
-            </label>
-          </div>
-          )
-          })}
-        </div>
+        <ResultComponent data={filteredResults} />
       </div>
-      <ResultComponent data={filteredResults} />
     </div>
   );
 }
