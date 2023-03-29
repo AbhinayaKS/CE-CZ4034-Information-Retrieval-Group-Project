@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 export default function Review({ text, maxLength }) {
   const [showMore, setShowMore] = useState(false);
 
-  const displayText = showMore ? text : String(text).substring(0,maxLength)
+  const displayText = showMore? text : String(text).substring(0, maxLength)
 
   return (
     <div>

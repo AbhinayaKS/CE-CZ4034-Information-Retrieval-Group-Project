@@ -11,7 +11,15 @@ function App() {
   const genres_url = 'http://localhost:8983/solr/movies/select?q=*:*&facet=true&facet.field=Genre_s_&facet.limit=-1&facet.mincount=1'
 
   const [query, setQuery] = useState('');
-  const [condition, setCondition] = useState([]);
+  const [condition, setCondition] = useState(
+    {
+      genre:[],
+      startDate: new Date(),
+      endDate: new Date(),
+      prod_Company:''
+    }
+    );
+    
   const [results, setResults] = useState([]);
   const [dateCondition, setDateCondition] = useState([
     {
@@ -43,32 +51,40 @@ function App() {
 
 
    // Filter results based on query state variable
-   useEffect(() => {
-     if (condition) {
-      console.log(condition)
-       const filteredData = filteredResults.filter((item) => {
-         return (item.Movie_Name).toLowerCase().includes(condition);
-       });
-       setFilteredResults(filteredData);  
-     } else {
-       setFilteredResults(results);
-     }
-   }, [condition]);
+  //  useEffect(() => {
+  //    if (condition) {
+  //     console.log(condition)
+  //      const filteredData = filteredResults.filter((item) => {
+  //        return (item.Movie_Name).toLowerCase().includes(condition);
+  //      });
+  //      setFilteredResults(filteredData);  
+  //    } else {
+  //      setFilteredResults(results);
+  //    }
+  //  }, [condition]);
 
+  useEffect(()=>{
+    console.log(condition)
+  },[condition])
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
 
-  const handleConditionChange = (e) => {
+  const handleGenreConditionChange = (e) => {
     const genre = e.target.value;
     const isChecked = e.target.checked;
-    if (isChecked) {
-      setCondition([...condition, genre]);
-    } else {
-      setCondition(condition.filter((g) => g !== genre));
-    }
-  }
+    setCondition((prevState) => {
+      if (isChecked) {
+        return { ...prevState, genre: [...prevState.genre, genre] };
+      } else {
+        return {
+          ...prevState,
+          genre: prevState.genre.filter((g) => g !== genre),
+        };
+      }
+    });
+  };
 
   const submit = async (e) => {
     e.preventDefault();
@@ -107,7 +123,7 @@ function App() {
             {movieGenres.map((genre) => {
             return (
               <div class="form-check" key={genre}>
-              <input class="form-check-input" type="checkbox"  value={genre} id={genre} onChange={(e) => handleConditionChange(e)}/>
+              <input class="form-check-input" type="checkbox"  value={genre} id={genre} onChange={(e) => handleGenreConditionChange(e)}/>
               <label class="form-check-label" htmlFor={genre}>
                 {genre}
               </label>
