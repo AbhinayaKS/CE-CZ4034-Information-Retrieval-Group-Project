@@ -53,7 +53,7 @@ return(
                 <TableCell align='left'><span>tmdb: {item.tmdb_Rating}</span><br/><span>user: {item.User_Rating}</span></TableCell>
                 <TableCell align='left'>{item.Production_Company}</TableCell>
                 <TableCell align='left'>{new Date(item.Release_Date).toLocaleDateString()}</TableCell>
-                <TableCell align="left"><Review text={item.Review_Content} maxLength={50} /></TableCell>
+                <TableCell align="left"><Review text={item.Review_Content} maxLength={250} /></TableCell>
               </TableRow>
             ))}
           </TableBody>
