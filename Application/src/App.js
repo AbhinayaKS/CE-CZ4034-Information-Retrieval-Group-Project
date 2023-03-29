@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import "./App.css";
@@ -25,6 +24,7 @@ function App() {
   const [filteredGenre, setFilteredGenre] = useState([]);
   const [filteredCompany, setFilteredCompany] = useState([]);
   const [genre, setGenre] = useState([]);
+  const [suggestions, setSuggestions] = useState([]);
 
   const [condition, setCondition] = useState({
     genre: [],
@@ -111,14 +111,30 @@ function App() {
     });
   };
 
+  const handleSuggestionClick = (event) => {
+    setQuery(event);
+  };
+
   const submit = async (e) => {
     e.preventDefault();
     try {
+      // const response = await axios.get(
+      //   `http://localhost:8983/solr/movie/select?fl=Movie_Name%2CGenre_s_%2Ctmdb_Rating%2CUser_Rating%2CProduction_Company%2CRelease_Date%2CReview_Content&fq=Movie_Name%3A"${query}"&indent=true&q.op=OR&q=*%3A*&useParams=`
+      // );
       const response = await axios.get(
-        `http://localhost:8983/solr/movie/select?indent=true&q.op=OR&q=Movie_Name%3A${query}&useParams=`
+        `http://localhost:8983/solr/movie/spell?q=Movie_Name:"${query}"&spellcheck=true&spellcheck.count=3&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true`
       );
-      setResults(response.data.response.docs);
-      console.log(genre);
+      if (response.data.response.numFound > 0) {
+        setResults(response.data.response.docs);
+        setSuggestions([]);
+      } else if (response.data.spellcheck.suggestions.length > 0) {
+        setSuggestions(
+          response.data.spellcheck.suggestions[1].suggestion.map((s) => s.word)
+        );
+      } else {
+        setResults([]);
+        setSuggestions([]);
+      }
     } catch (error) {
       console.log(query);
       console.error(error);
@@ -130,17 +146,46 @@ function App() {
       <div className="header">
         <h1>IMDB DATA</h1>
         <div className="d-flex">
-          {/* Search bar */}
-          <form onSubmit={submit} style={{ width: "40%" }}>
-            <TextField
-              id="movie-search"
-              label="Search movie"
-              type="search"
-              value={query}
-              onChange={handleInputChange}
-              style={{ width: "100%" }}
-            />
-          </form>
+          <div style={{ width: "40%" }}>
+            {/* Search bar */}
+            <form onSubmit={submit}>
+              <TextField
+                id="movie-search"
+                label="Search movie"
+                type="search"
+                value={query}
+                onChange={handleInputChange}
+                style={{ width: "100%" }}
+              />
+            </form>
+            {/* Suggestions */}
+            {suggestions.length > 0 && (
+              <div style={{ marginTop: "1rem" }}>
+                <ul
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    listStyleType: "none",
+                  }}
+                >
+                  <li style={{ color: "#FF5349", marginRight: "1rem" }}>
+                    Search instead for:{" "}
+                  </li>
+                  {suggestions.map((suggestion) => (
+                    <li key={suggestion}>
+                      <a
+                        href="#"
+                        onClick={() => handleSuggestionClick(suggestion)}
+                        style={{ marginRight: "1rem" }}
+                      >
+                        {suggestion}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
           {/* Genre filter */}
           <FormControl style={{ marginLeft: "1%", width: "20%" }}>
             <InputLabel id="movie-genre-label">Genre</InputLabel>
@@ -153,8 +198,8 @@ function App() {
               input={<OutlinedInput label="Genre" />}
             >
               {genre.map((g) => (
-                <MenuItem key={g} value={g}>
-                  {g}
+                <MenuItem key={g.val} value={g.val}>
+                  {g.val}
                 </MenuItem>
               ))}
             </Select>
