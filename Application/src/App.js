@@ -46,8 +46,8 @@ function App() {
    useEffect(() => {
      if (condition) {
       console.log(condition)
-       const filteredData = results.filter((item) => {
-         return item.Movie_Name.toLowerCase().includes(condition);
+       const filteredData = filteredResults.filter((item) => {
+         return (item.Movie_Name).toLowerCase().includes(condition);
        });
        setFilteredResults(filteredData);  
      } else {
@@ -57,7 +57,6 @@ function App() {
 
 
   const handleInputChange = (event) => {
-    console.log(query)
     setQuery(event.target.value);
   };
 
@@ -75,7 +74,7 @@ function App() {
     e.preventDefault();
     try {
       const response = await axios.get(
-        `http://localhost:8983/solr/movies/select?indent=true&q.op=OR&q=Movie_Name%3A${query}&useParams=`
+        `http://localhost:8983/solr/movie/select?indent=true&q.op=OR&q=Movie_Name%3A${query}&useParams=`
       );
       setResults(response.data.response.docs);
     } catch (error) {
