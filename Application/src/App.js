@@ -8,9 +8,11 @@ import ResultComponent from './result';
 
 function App() {
 
-  const genres_url = 'http://localhost:8983/solr/movies/select?q=*:*&facet=true&facet.field=Genre_s_&facet.limit=-1&facet.mincount=1'
+  const genres_url = 'http://localhost:8983/solr/movie/select?q=*:*&facet.field={!key=distinctGenre}distinctGenre&facet=on&rows=0&wt=json&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}'
+  
 
   const [query, setQuery] = useState('');
+  const [genre,setGenre] = useState([])
   const [condition, setCondition] = useState(
     {
       genre:[],
@@ -19,7 +21,6 @@ function App() {
       prod_Company:''
     }
     );
-    
   const [results, setResults] = useState([]);
   const [dateCondition, setDateCondition] = useState([
     {
@@ -29,16 +30,21 @@ function App() {
     }
   ]);
 
+  async function fetchGenre() {
+    let response = await axios(genres_url);
+    let data = await response.data.facets.distinctGenre.buckets;
+    setGenre(data);
+  }
+
+  useEffect(()=>{
+    fetchGenre()
+  },[])
+
   useEffect(() => {
     console.log("dateCondition", dateCondition);
   }, [dateCondition]);
 
-  const movieGenres = [ "Action","Adventure","Animation","Comedy","Crime","Thriller","Fantasy","Science Fiction","Drama",
-                        "Family","Mystery","Horror","Romance","History","War","Western"]
-
   const production_Company = ["A","B","C"]
-
-  movieGenres.sort((a, b) => a.localeCompare(b));
 
    // State variable for filtered results
    const [filteredResults, setFilteredResults] = useState([]);
@@ -93,6 +99,7 @@ function App() {
         `http://localhost:8983/solr/movie/select?indent=true&q.op=OR&q=Movie_Name%3A${query}&useParams=`
       );
       setResults(response.data.response.docs);
+      console.log(genre);
     } catch (error) {
       console.log(query);
       console.error(error);
@@ -120,13 +127,11 @@ function App() {
         <div>
           <h4>Movie genres</h4>
           <div className='genres_container'>
-            {movieGenres.map((genre) => {
+            {genre.map((genre) => {
             return (
               <div class="form-check" key={genre}>
-              <input class="form-check-input" type="checkbox"  value={genre} id={genre} onChange={(e) => handleGenreConditionChange(e)}/>
-              <label class="form-check-label" htmlFor={genre}>
-                {genre}
-              </label>
+              <input class="form-check-input" type="checkbox"  value={genre.val} id={genre.val} onChange={(e) => handleGenreConditionChange(e)}/>
+              <label class="form-check-label">{genre.val}</label>
             </div>
             )
             })}
