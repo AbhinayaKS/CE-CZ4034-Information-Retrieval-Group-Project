@@ -52,7 +52,6 @@ function App() {
   async function fetchMovies() {
     let response = await axios(movies_url);
     let data = await response.data.response.docs;
-    console.log(response.data.response.docs);
     setResults(data);
   }
 
@@ -76,18 +75,21 @@ function App() {
 
   useEffect(() => {
     let filteredData = results;
-
+    console.log(condition)
     if (condition.genre.length > 0) {
-      console.log(condition.genre)
+      console.log(condition)
       filteredData = filteredData.filter((result) => {
         let genres = result.Genre_s_[0]?.split(",");
         genres = genres.map(function(a){return a.trim().toLowerCase()})
-        console.log(genres)
         return condition.genre.every((g) => genres.includes(String(g).toLowerCase()));
       });
     }
+
+    if (condition.prod_Company !== '') {
+      console.log("Doing company")
+      filteredData = filteredData.filter((results) => String(results.Production_Company) === String(filteredCompany[0]) )
+    }
     setFilteredResults(filteredData)
-    console.log("filtered:",filteredData)
    }, [condition,results]);
 
   useEffect(() => {
@@ -119,9 +121,7 @@ function App() {
     const filteredSelection =
       typeof value === "string" ? value.split(",") : value;
     setFilteredCompany(filteredSelection);
-    setCondition((prevState) => {
-      return { ...prevState, prod_Company: [filteredSelection] };
-    });
+    setCondition({...condition,prod_Company:filteredSelection[0]})
   };
 
   // function to search movie by name
