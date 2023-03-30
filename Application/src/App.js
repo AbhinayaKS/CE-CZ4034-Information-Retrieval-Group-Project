@@ -66,6 +66,7 @@ function App() {
   }, []);
 
   useEffect(() => {
+    console.log(condition)
     let filteredData = results;
     if (condition.genre.length > 0) {
       filteredData = filteredData.filter((result) => {
@@ -92,7 +93,7 @@ function App() {
       );
     }
 
-    if (condition.releaseYear !== "None") {
+    if (condition.releaseYear !== "None" && condition.releaseYear !== "undefined") {
       filteredData = filteredData.filter((results) => {
         let movieYear = String(results.Release_Date).split("-")[0];
         return String(movieYear) == String(condition.releaseYear);
@@ -139,10 +140,11 @@ function App() {
 
   const handleDateConditionChange = (event) => {
     if (event != null) {
-      setCondition({ ...condition, releaseYear: String(event.year()) });
+      setCondition({ ...condition, releaseYear: String(event?.year()) });
     } else {
       setCondition({ ...condition, releaseYear: "None" });
     }
+    
   };
 
   // function to search movie by name
