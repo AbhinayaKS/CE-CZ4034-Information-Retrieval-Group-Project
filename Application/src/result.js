@@ -11,7 +11,7 @@ import Review from "./Review";
 export default function ResultComponent({ data }) {
   const [showMore, setShowMore] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
+  const itemsPerPage = 10;
 
   const dataResult = data;
 

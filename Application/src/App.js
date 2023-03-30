@@ -3,7 +3,6 @@ import axios from "axios";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import "./App.css";
-import Button from "@mui/material/Button";
 import ResultComponent from "./result";
 import {
   TextField,
@@ -33,22 +32,14 @@ function App() {
   const [filteredCompany, setFilteredCompany] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
   const [results, setResults] = useState([]);
-  // State variable for filtered results
   const [filteredResults, setFilteredResults] = useState([]);
 
   const [condition, setCondition] = useState({
     genre: [],
-    startDate: new Date(),
-    endDate: new Date(),
-    prod_Company: "",
+    rating: "",
+    releaseYear: "None",
+    prod_Company: "None",
   });
-  const [dateCondition, setDateCondition] = useState([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection",
-    },
-  ]);
 
   async function fetchMovies() {
     let response = await axios(movies_url);
@@ -88,11 +79,24 @@ function App() {
       });
     }
 
-    if (condition.prod_Company !== "") {
+    if (condition.rating !== "") {
+      filteredData = filteredData.filter(
+        (result) => Number(result.tmdb_Rating) >= Number(condition.rating)
+      );
+    }
+
+    if (condition.prod_Company !== "None") {
       filteredData = filteredData.filter(
         (results) =>
-          String(results.Production_Company) === String(filteredCompany[0])
+          String(results.Production_Company) === String(filteredCompany)
       );
+    }
+
+    if (condition.releaseYear !== "None") {
+      filteredData = filteredData.filter((results) => {
+        let movieYear = String(results.Release_Date).split("-")[0];
+        return String(movieYear) == String(condition.releaseYear);
+      });
     }
 
     setFilteredResults(filteredData);
@@ -127,6 +131,14 @@ function App() {
     const filteredSelection = value;
     setFilteredCompany(filteredSelection);
     setCondition({ ...condition, prod_Company: filteredSelection });
+  };
+
+  const handleRatingConditionChange = (event) => {
+    setCondition({ ...condition, rating: event.target.value });
+  };
+
+  const handleDateConditionChange = (event) => {
+    setCondition({ ...condition, releaseYear: String(event.year()) });
   };
 
   // function to search movie by name
@@ -229,13 +241,22 @@ function App() {
               ))}
             </Select>
           </FormControl>
+          {/* Rating */}
+          <div className="searchBar_Margin">
+            <TextField
+              label="tmdb Rating 0 - 10"
+              type="number"
+              inputProps={{ min: 0 }}
+              onChange={handleRatingConditionChange}
+            />
+          </div>
           {/* Date */}
-          <div style={{ marginLeft: "1%", width: "20%" }}>
+          <div className="searchBar_Margin">
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
                 label={"Release Year"}
                 views={["year"]}
-                onChange={(item) => setDateCondition([item.selection])}
+                onChange={handleDateConditionChange}
               />
             </LocalizationProvider>
           </div>
@@ -249,7 +270,7 @@ function App() {
               onChange={handleCompanyConditionChange}
               input={<OutlinedInput label="Company" />}
             >
-              <MenuItem value="">
+              <MenuItem value="None">
                 <em>None</em>
               </MenuItem>
               {prod_Company.map((c) => (
