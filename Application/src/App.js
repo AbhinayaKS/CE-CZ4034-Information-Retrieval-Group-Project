@@ -3,7 +3,6 @@ import axios from "axios";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import "./App.css";
-import Button from "@mui/material/Button";
 import ResultComponent from "./result";
 import {
   TextField,
@@ -40,7 +39,7 @@ function App() {
     genre: [],
     startDate: new Date(),
     endDate: new Date(),
-    prod_Company: "",
+    prod_Company: "None",
   });
   const [dateCondition, setDateCondition] = useState([
     {
@@ -89,16 +88,12 @@ function App() {
       });
     }
 
-    if (condition.prod_Company !== "") {
-      console.log("Doing company");
-      filteredData = filteredData.filter(
-        (results) =>
-          String(results.Production_Company) === String(filteredCompany[0])
-      );
+    if (condition.prod_Company !== 'None') {
+      filteredData = filteredData.filter((results) => String(results.Production_Company) === String(filteredCompany));
     }
-
-    setFilteredResults(filteredData);
-  }, [condition, results]);
+    
+    setFilteredResults(filteredData)
+   }, [condition,results]);
 
   useEffect(() => {
     if (query.length == 0) {
@@ -248,7 +243,7 @@ function App() {
               onChange={handleCompanyConditionChange}
               input={<OutlinedInput label="Company" />}
             >
-              <MenuItem value="">
+              <MenuItem value="None">
                 <em>None</em>
               </MenuItem>
               {prod_Company.map((c) => (
