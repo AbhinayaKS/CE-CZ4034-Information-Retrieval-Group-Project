@@ -27,11 +27,12 @@ export default function ResultComponent({ data }) {
   }, [data]);
 
   return (
-    <div className="section2">
-      <div>
+    <div>
+    <div >
+      <div className="section2">
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
+            <TableHead >
               <TableRow>
                 <TableCell sx={{ width: 200 }} align="center">
                   Movie Name
@@ -79,8 +80,9 @@ export default function ResultComponent({ data }) {
             </TableBody>
           </Table>
         </TableContainer>
-      </div>
-      <div>
+      </div>      
+    </div>
+    <div style={{ position: 'fixed', left: '0', bottom: '0', width: '100%' }}>
         <TablePagination
           component="div"
           sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
@@ -91,7 +93,6 @@ export default function ResultComponent({ data }) {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </div>
-      
     </div>
   );
 }
