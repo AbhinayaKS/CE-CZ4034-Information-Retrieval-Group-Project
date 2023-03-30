@@ -17,6 +17,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 function App() {
+  const movies_url = `http://localhost:8983/solr/movie/select?indent=true&q.op=OR&q=*%3A*&rows=150&useParams=`;
+
   const genres_url =
     "http://localhost:8983/solr/movie/select?q=*:*&facet.field={!key=distinctGenre}distinctGenre&facet=on&rows=0&wt=json&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}";
 
@@ -47,6 +49,13 @@ function App() {
     },
   ]);
 
+  async function fetchMovies() {
+    let response = await axios(movies_url);
+    let data = await response.data.response.docs;
+    console.log(response.data.response.docs);
+    setResults(data);
+  }
+
   async function fetchGenre() {
     let response = await axios(genres_url);
     let data = await response.data.facets.distinctGenre.buckets;
@@ -60,6 +69,7 @@ function App() {
   }
 
   useEffect(() => {
+    fetchMovies();
     fetchGenre();
     fetchProd_Company();
   }, []);
@@ -90,6 +100,12 @@ function App() {
   useEffect(() => {
     console.log(condition);
   }, [condition]);
+
+  useEffect(() => {
+    if (query.length == 0) {
+      fetchMovies();
+    }
+  }, [query]);
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
