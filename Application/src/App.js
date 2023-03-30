@@ -3,7 +3,7 @@ import axios from "axios";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import "./App.css";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import ResultComponent from "./result";
 import {
   TextField,
@@ -76,22 +76,29 @@ function App() {
 
   useEffect(() => {
     let filteredData = results;
-    console.log(condition)
+    console.log(condition);
     if (condition.genre.length > 0) {
       filteredData = filteredData.filter((result) => {
         let genres = result.Genre_s_[0]?.split(",");
-        genres = genres.map(function(a){return a.trim().toLowerCase()})
-        return condition.genre.every((g) => genres.includes(String(g).toLowerCase()));
+        genres = genres.map(function (a) {
+          return a.trim().toLowerCase();
+        });
+        return condition.genre.every((g) =>
+          genres.includes(String(g).toLowerCase())
+        );
       });
     }
 
-    if (condition.prod_Company !== '') {
-      console.log("Doing company")
-      filteredData = filteredData.filter((results) => String(results.Production_Company) === String(filteredCompany[0]) )
+    if (condition.prod_Company !== "") {
+      console.log("Doing company");
+      filteredData = filteredData.filter(
+        (results) =>
+          String(results.Production_Company) === String(filteredCompany[0])
+      );
     }
-    
-    setFilteredResults(filteredData)
-   }, [condition,results]);
+
+    setFilteredResults(filteredData);
+  }, [condition, results]);
 
   useEffect(() => {
     if (query.length == 0) {
@@ -121,7 +128,7 @@ function App() {
     } = event;
     const filteredSelection = value;
     setFilteredCompany(filteredSelection);
-    setCondition({...condition,prod_Company:filteredSelection[0]})
+    setCondition({ ...condition, prod_Company: filteredSelection });
   };
 
   // function to search movie by name
