@@ -37,8 +37,7 @@ function App() {
 
   const [condition, setCondition] = useState({
     genre: [],
-    startDate: new Date(),
-    endDate: new Date(),
+    releaseYear: "None",
     prod_Company: "None",
   });
   const [dateCondition, setDateCondition] = useState([
@@ -89,11 +88,18 @@ function App() {
     }
 
     if (condition.prod_Company !== 'None') {
-      filteredData = filteredData.filter((results) => String(results.Production_Company) === String(filteredCompany));
+      filteredData = filteredData.filter((results) =>String(results.Production_Company) === String(filteredCompany));
+    }
+
+    if (condition.releaseYear !== 'None') {
+      filteredData = filteredData.filter((results) => {
+        let movieYear = String(results.Release_Date).split("-")[0]
+        return String(movieYear) >= String(condition.releaseYear)
+      });
     }
     
-    setFilteredResults(filteredData)
-   }, [condition,results]);
+    setFilteredResults(filteredData);
+   }, [condition, results]);
 
   useEffect(() => {
     if (query.length == 0) {
@@ -104,6 +110,8 @@ function App() {
   const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
+
+ 
 
   const handleGenreConditionChange = (event) => {
     const {
@@ -124,6 +132,10 @@ function App() {
     const filteredSelection = value;
     setFilteredCompany(filteredSelection);
     setCondition({ ...condition, prod_Company: filteredSelection });
+  };
+
+  const handleDate = (event) => {
+    setCondition({... condition, releaseYear: String(event.year())})
   };
 
   // function to search movie by name
@@ -229,7 +241,7 @@ function App() {
               <DatePicker
                 label={"Release Year"}
                 views={["year"]}
-                onChange={(item) => setDateCondition([item.selection])}
+                onChange={handleDate}
               />
             </LocalizationProvider>
           </div>
