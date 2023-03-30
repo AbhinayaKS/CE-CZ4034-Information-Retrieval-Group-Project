@@ -144,7 +144,7 @@ function App() {
   // function to search movie by name
   const searchByName = async (q) => {
     const response = await axios.get(
-      `http://localhost:8983/solr/movie/spell?q=Movie_Name:"${q}"&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true&spellcheck.collate=true&spellcheck.maxCollations=3`
+      `http://localhost:8983/solr/movie/spell?q=Movie_Name:"${q}"&rows=10000&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true&spellcheck.collate=true&spellcheck.maxCollations=3`
     );
     if (response.data.response.numFound > 0) {
       setResults(response.data.response.docs);
