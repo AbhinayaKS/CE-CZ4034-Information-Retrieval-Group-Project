@@ -20,15 +20,18 @@ function App() {
   const genres_url =
     "http://localhost:8983/solr/movie/select?q=*:*&facet.field={!key=distinctGenre}distinctGenre&facet=on&rows=0&wt=json&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}";
 
-  const prod_Company_url = 
-    'http://localhost:8983/solr/movie/select?q=*:*&json.facet={"distinct_Prd_Company":{"type":"terms","field":"distinct_Prd_Company","limit":-1,"mincount":5}}&rows=0'
+  const prod_Company_url =
+    'http://localhost:8983/solr/movie/select?q=*:*&json.facet={"distinct_Prd_Company":{"type":"terms","field":"distinct_Prd_Company","limit":-1,"mincount":5}}&rows=0';
 
   const [query, setQuery] = useState("");
-  const [filteredGenre, setFilteredGenre] = useState([]);
-  const [filteredCompany, setFilteredCompany] = useState([]);
   const [genre, setGenre] = useState([]);
+  const [filteredGenre, setFilteredGenre] = useState([]);
   const [prod_Company, setProd_Company] = useState([]);
+  const [filteredCompany, setFilteredCompany] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
+  const [results, setResults] = useState([]);
+  // State variable for filtered results
+  const [filteredResults, setFilteredResults] = useState([]);
 
   const [condition, setCondition] = useState({
     genre: [],
@@ -36,7 +39,6 @@ function App() {
     endDate: new Date(),
     prod_Company: "",
   });
-  const [results, setResults] = useState([]);
   const [dateCondition, setDateCondition] = useState([
     {
       startDate: new Date(),
@@ -65,10 +67,6 @@ function App() {
   useEffect(() => {
     console.log("dateCondition", dateCondition);
   }, [dateCondition]);
-
-
-  // State variable for filtered results
-  const [filteredResults, setFilteredResults] = useState([]);
 
   useEffect(() => {
     if (results) {
@@ -121,30 +119,34 @@ function App() {
     });
   };
 
-  const handleSuggestionClick = (event) => {
-    setQuery(event);
+  // function to search movie by name
+  const searchByName = async (q) => {
+    const response = await axios.get(
+      `http://localhost:8983/solr/movie/spell?q=Movie_Name:"${q}"&spellcheck=true&spellcheck.count=3&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true`
+    );
+    if (response.data.response.numFound > 0) {
+      setResults(response.data.response.docs);
+      setSuggestions([]);
+    } else if (response.data.spellcheck.suggestions.length > 0) {
+      setSuggestions(
+        response.data.spellcheck.suggestions[1].suggestion.map((s) => s.word)
+      );
+      setResults([]);
+    } else {
+      setResults([]);
+      setSuggestions([]);
+    }
   };
 
-  const submit = async (e) => {
+  const handleSuggestionClick = (event) => {
+    setQuery(event);
+    searchByName(event);
+  };
+
+  const submit = (e) => {
     e.preventDefault();
     try {
-      // const response = await axios.get(
-      //   `http://localhost:8983/solr/movie/select?fl=Movie_Name%2CGenre_s_%2Ctmdb_Rating%2CUser_Rating%2CProduction_Company%2CRelease_Date%2CReview_Content&fq=Movie_Name%3A"${query}"&indent=true&q.op=OR&q=*%3A*&useParams=`
-      // );
-      const response = await axios.get(
-        `http://localhost:8983/solr/movie/spell?q=Movie_Name:"${query}"&spellcheck=true&spellcheck.count=3&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true`
-      );
-      if (response.data.response.numFound > 0) {
-        setResults(response.data.response.docs);
-        setSuggestions([]);
-      } else if (response.data.spellcheck.suggestions.length > 0) {
-        setSuggestions(
-          response.data.spellcheck.suggestions[1].suggestion.map((s) => s.word)
-        );
-      } else {
-        setResults([]);
-        setSuggestions([]);
-      }
+      searchByName(query);
     } catch (error) {
       console.log(query);
       console.error(error);
