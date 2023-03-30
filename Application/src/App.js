@@ -52,7 +52,6 @@ function App() {
   async function fetchMovies() {
     let response = await axios(movies_url);
     let data = await response.data.response.docs;
-    console.log(response.data.response.docs);
     setResults(data);
   }
 
@@ -127,8 +126,7 @@ function App() {
     const {
       target: { value },
     } = event;
-    const filteredSelection =
-      typeof value === "string" ? value.split(",") : value;
+    const filteredSelection = value;
     setFilteredCompany(filteredSelection);
     setCondition((prevState) => {
       return { ...prevState, prod_Company: [filteredSelection] };
@@ -252,6 +250,9 @@ function App() {
               onChange={handleCompanyConditionChange}
               input={<OutlinedInput label="Company" />}
             >
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
               {prod_Company.map((c) => (
                 <MenuItem key={c.val} value={c.val}>
                   {c.val}
