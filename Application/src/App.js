@@ -76,7 +76,6 @@ function App() {
 
   useEffect(() => {
     let filteredData = results;
-    console.log(condition);
     if (condition.genre.length > 0) {
       filteredData = filteredData.filter((result) => {
         let genres = result.Genre_s_[0]?.split(",");
@@ -90,7 +89,6 @@ function App() {
     }
 
     if (condition.prod_Company !== "") {
-      console.log("Doing company");
       filteredData = filteredData.filter(
         (results) =>
           String(results.Production_Company) === String(filteredCompany[0])
@@ -134,15 +132,19 @@ function App() {
   // function to search movie by name
   const searchByName = async (q) => {
     const response = await axios.get(
-      `http://localhost:8983/solr/movie/spell?q=Movie_Name:"${q}"&spellcheck=true&spellcheck.count=3&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true`
+      `http://localhost:8983/solr/movie/spell?q=Movie_Name:"${q}"&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true&spellcheck.collate=true&spellcheck.maxCollations=3`
     );
     if (response.data.response.numFound > 0) {
       setResults(response.data.response.docs);
       setSuggestions([]);
     } else if (response.data.spellcheck.suggestions.length > 0) {
-      setSuggestions(
-        response.data.spellcheck.suggestions[1].suggestion.map((s) => s.word)
-      );
+      const collationQuery = response.data.spellcheck.collations
+        .filter((collation, index) => index % 2 === 1)
+        .map((collation) =>
+          collation.collationQuery.replace(/^.*?"(.+?)".*?$/, "$1")
+        );
+      setSuggestions(collationQuery);
+      console.log(response.data.spellcheck.collations);
       setResults([]);
     } else {
       setResults([]);
@@ -160,7 +162,6 @@ function App() {
     try {
       searchByName(query);
     } catch (error) {
-      console.log(query);
       console.error(error);
     }
   };
