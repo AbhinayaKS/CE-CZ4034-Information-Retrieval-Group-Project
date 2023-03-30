@@ -3,6 +3,7 @@ import axios from "axios";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import "./App.css";
+import Button from '@mui/material/Button';
 import ResultComponent from "./result";
 import {
   TextField,
@@ -77,7 +78,6 @@ function App() {
     let filteredData = results;
     console.log(condition)
     if (condition.genre.length > 0) {
-      console.log(condition)
       filteredData = filteredData.filter((result) => {
         let genres = result.Genre_s_[0]?.split(",");
         genres = genres.map(function(a){return a.trim().toLowerCase()})
@@ -89,6 +89,7 @@ function App() {
       console.log("Doing company")
       filteredData = filteredData.filter((results) => String(results.Production_Company) === String(filteredCompany[0]) )
     }
+    
     setFilteredResults(filteredData)
    }, [condition,results]);
 
@@ -110,7 +111,7 @@ function App() {
       typeof value === "string" ? value.split(",") : value;
     setFilteredGenre(filteredSelection);
     setCondition((prevState) => {
-      return { ...prevState, genre: [filteredSelection] };
+      return { ...prevState, genre: filteredSelection };
     });
   };
 
