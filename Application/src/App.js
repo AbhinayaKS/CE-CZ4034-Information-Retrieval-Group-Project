@@ -20,10 +20,14 @@ function App() {
   const genres_url =
     "http://localhost:8983/solr/movie/select?q=*:*&facet.field={!key=distinctGenre}distinctGenre&facet=on&rows=0&wt=json&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}";
 
+  const prod_Company_url = 
+    'http://localhost:8983/solr/movie/select?q=*:*&json.facet={"distinct_Prd_Company":{"type":"terms","field":"distinct_Prd_Company","limit":-1,"mincount":5}}&rows=0'
+
   const [query, setQuery] = useState("");
   const [filteredGenre, setFilteredGenre] = useState([]);
   const [filteredCompany, setFilteredCompany] = useState([]);
   const [genre, setGenre] = useState([]);
+  const [prod_Company, setProd_Company] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
 
   const [condition, setCondition] = useState({
@@ -47,15 +51,21 @@ function App() {
     setGenre(data);
   }
 
+  async function fetchProd_Company() {
+    let response = await axios(prod_Company_url);
+    let data = await response.data.facets.distinct_Prd_Company.buckets;
+    setProd_Company(data);
+  }
+
   useEffect(() => {
     fetchGenre();
+    fetchProd_Company();
   }, []);
 
   useEffect(() => {
     console.log("dateCondition", dateCondition);
   }, [dateCondition]);
 
-  const production_Company = ["A", "B", "C"];
 
   // State variable for filtered results
   const [filteredResults, setFilteredResults] = useState([]);
@@ -220,14 +230,13 @@ function App() {
             <Select
               labelId="company-label"
               id="company"
-              multiple
               value={filteredCompany}
               onChange={handleCompanyConditionChange}
               input={<OutlinedInput label="Company" />}
             >
-              {production_Company.map((c) => (
-                <MenuItem key={c} value={c}>
-                  {c}
+              {prod_Company.map((c) => (
+                <MenuItem key={c.val} value={c.val}>
+                  {c.val}
                 </MenuItem>
               ))}
             </Select>

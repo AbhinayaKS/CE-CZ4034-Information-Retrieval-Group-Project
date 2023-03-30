@@ -57,18 +57,18 @@ export default function ResultComponent({ data }) {
                   <TableCell component="th" scope="row">
                     {item.Movie_Name}
                   </TableCell>
-                  <TableCell align="left">
+                  <TableCell align="center">
                     {item.Genre_s_.map((genre) => {
                       return genre;
                     })}
                   </TableCell>
-                  <TableCell align="left">
+                  <TableCell align="center">
                     <span>tmdb: {item.tmdb_Rating}</span>
                     <br />
                     <span>user: {item.User_Rating}</span>
                   </TableCell>
-                  <TableCell align="left">{item.Production_Company}</TableCell>
-                  <TableCell align="left">
+                  <TableCell align="center">{item.Production_Company}</TableCell>
+                  <TableCell align="center">
                     {new Date(item.Release_Date).toLocaleDateString()}
                   </TableCell>
                   <TableCell align="left">
