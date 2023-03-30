@@ -17,7 +17,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 function App() {
-  const movies_url = `http://localhost:8983/solr/movie/select?indent=true&q.op=OR&q=*%3A*&rows=10000&useParams=`;
+  const movies_url = `http://localhost:8983/solr/movie/select?fl=Movie_Name%2CGenre_s_%2Ctmdb_Rating%2CUser_Rating%2CProduction_Company%2CRelease_Date%2CReview_Content&indent=true&q.op=OR&q=*%3A*&rows=10000&useParams=`;
 
   const genres_url =
     "http://localhost:8983/solr/movie/select?q=*:*&facet.field={!key=distinctGenre}distinctGenre&facet=on&rows=0&wt=json&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}";
@@ -144,8 +144,9 @@ function App() {
   // function to search movie by name
   const searchByName = async (q) => {
     const response = await axios.get(
-      `http://localhost:8983/solr/movie/spell?q=Movie_Name:"${q}"&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true&spellcheck.collate=true&spellcheck.maxCollations=3`
+      `http://localhost:8983/solr/movie/spell?fl=Movie_Name%2CGenre_s_%2Ctmdb_Rating%2CUser_Rating%2CProduction_Company%2CRelease_Date%2CReview_Content&q=Movie_Name:"${q}"&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true&spellcheck.collate=true&spellcheck.maxCollations=3&rows=10000`
     );
+    console.log(response);
     if (response.data.response.numFound > 0) {
       setResults(response.data.response.docs);
       setSuggestions([]);
