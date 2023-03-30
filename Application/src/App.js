@@ -138,7 +138,11 @@ function App() {
   };
 
   const handleDateConditionChange = (event) => {
-    setCondition({ ...condition, releaseYear: String(event.year()) });
+    if (event != null) {
+      setCondition({ ...condition, releaseYear: String(event.year()) });
+    } else {
+      setCondition({ ...condition, releaseYear: "None" });
+    }
   };
 
   // function to search movie by name
@@ -255,6 +259,14 @@ function App() {
           <div className="searchBar_Margin">
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
+                slotProps={{
+                  actionBar: {
+                    actions: ["clear"],
+                  },
+                }}
+                onAccept={(newDate) => {
+                  console.log(newDate);
+                }}
                 label={"Release Year"}
                 views={["year"]}
                 onChange={handleDateConditionChange}
