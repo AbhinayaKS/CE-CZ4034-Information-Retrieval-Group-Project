@@ -80,14 +80,18 @@ export default function ResultComponent({ data }) {
           </Table>
         </TableContainer>
       </div>
-      <TablePagination
-        component="div"
-        count={data.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
+      <div>
+        <TablePagination
+          component="div"
+          sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+          count={data.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </div>
+      
     </div>
   );
 }
