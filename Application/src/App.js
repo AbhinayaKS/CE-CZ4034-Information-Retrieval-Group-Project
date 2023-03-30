@@ -17,7 +17,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 function App() {
-  const movies_url = `http://localhost:8983/solr/movie/select?indent=true&q.op=OR&q=*%3A*&rows=150&useParams=`;
+  const movies_url = `http://localhost:8983/solr/movie/select?indent=true&q.op=OR&q=*%3A*&rows=10000&useParams=`;
 
   const genres_url =
     "http://localhost:8983/solr/movie/select?q=*:*&facet.field={!key=distinctGenre}distinctGenre&facet=on&rows=0&wt=json&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}";

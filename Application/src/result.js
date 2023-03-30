@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -7,23 +7,23 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Review from "./Review";
+import TablePagination from '@mui/material/TablePagination';
 
 export default function ResultComponent({ data }) {
-  const [showMore, setShowMore] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  const dataResult = data;
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
 
-  const numberOfPages = Math.ceil(dataResult.length / itemsPerPage);
-  const getPageData = () => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    return dataResult.slice(startIndex, endIndex);
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
   };
 
   useEffect(() => {
-    setCurrentPage(1);
+    setPage(0);
   }, [data]);
 
   return (
@@ -52,7 +52,7 @@ export default function ResultComponent({ data }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {getPageData().map((item, index) => (
+              {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((item, index) => (
                 <TableRow key={index}>
                   <TableCell component="th" scope="row">
                     {item.Movie_Name}
@@ -80,45 +80,14 @@ export default function ResultComponent({ data }) {
           </Table>
         </TableContainer>
       </div>
-      <nav>
-        <ul className="pagination">
-          <li className={`page-item${currentPage === 1 ? " disabled" : ""}`}>
-            <button
-              className="page-link"
-              onClick={() => setCurrentPage(currentPage - 1)}
-            >
-              Previous
-            </button>
-          </li>
-          {Array(numberOfPages)
-            .fill()
-            .map((_, i) => (
-              <li
-                className={`page-item${i + 1 === currentPage ? " active" : ""}`}
-                key={i}
-              >
-                <button
-                  className="page-link"
-                  onClick={() => setCurrentPage(i + 1)}
-                >
-                  {i + 1}
-                </button>
-              </li>
-            ))}
-          <li
-            className={`page-item${
-              currentPage === numberOfPages ? " disabled" : ""
-            }`}
-          >
-            <button
-              className="page-link"
-              onClick={() => setCurrentPage(currentPage + 1)}
-            >
-              Next
-            </button>
-          </li>
-        </ul>
-      </nav>
+      <TablePagination
+        component="div"
+        count={data.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+      />
     </div>
   );
 }
