@@ -75,31 +75,20 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log("dateCondition", dateCondition);
-  }, [dateCondition]);
+    let filteredData = results;
 
-  useEffect(() => {
-    if (results) {
-      setFilteredResults(results);
+    if (condition.genre.length > 0) {
+      console.log(condition.genre)
+      filteredData = filteredData.filter((result) => {
+        let genres = result.Genre_s_[0]?.split(",");
+        genres = genres.map(function(a){return a.trim().toLowerCase()})
+        console.log(genres)
+        return condition.genre.every((g) => genres.includes(String(g).toLowerCase()));
+      });
     }
-  }, [results]);
-
-  // Filter results based on query state variable
-  //  useEffect(() => {
-  //    if (condition) {
-  //     console.log(condition)
-  //      const filteredData = filteredResults.filter((item) => {
-  //        return (item.Movie_Name).toLowerCase().includes(condition);
-  //      });
-  //      setFilteredResults(filteredData);
-  //    } else {
-  //      setFilteredResults(results);
-  //    }
-  //  }, [condition]);
-
-  useEffect(() => {
-    console.log(condition);
-  }, [condition]);
+    setFilteredResults(filteredData)
+    console.log("filtered:",filteredData)
+   }, [condition,results]);
 
   useEffect(() => {
     if (query.length == 0) {
