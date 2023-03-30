@@ -32,21 +32,14 @@ function App() {
   const [filteredCompany, setFilteredCompany] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
   const [results, setResults] = useState([]);
-  // State variable for filtered results
   const [filteredResults, setFilteredResults] = useState([]);
 
   const [condition, setCondition] = useState({
     genre: [],
+    rating: '',
     releaseYear: "None",
     prod_Company: "None",
   });
-  const [dateCondition, setDateCondition] = useState([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection",
-    },
-  ]);
 
   async function fetchMovies() {
     let response = await axios(movies_url);
@@ -87,6 +80,10 @@ function App() {
       });
     }
 
+    if (condition.rating !== '') {
+      filteredData = filteredData.filter((result) => Number(result.tmdb_Rating) >= Number(condition.rating) )
+    }
+
     if (condition.prod_Company !== 'None') {
       filteredData = filteredData.filter((results) =>String(results.Production_Company) === String(filteredCompany));
     }
@@ -94,7 +91,7 @@ function App() {
     if (condition.releaseYear !== 'None') {
       filteredData = filteredData.filter((results) => {
         let movieYear = String(results.Release_Date).split("-")[0]
-        return String(movieYear) >= String(condition.releaseYear)
+        return String(movieYear) == String(condition.releaseYear)
       });
     }
     
@@ -134,7 +131,11 @@ function App() {
     setCondition({ ...condition, prod_Company: filteredSelection });
   };
 
-  const handleDate = (event) => {
+  const handleRatingConditionChange = (event) => {
+    setCondition({... condition, rating: event.target.value})
+  }
+
+  const handleDateConditionChange = (event) => {
     setCondition({... condition, releaseYear: String(event.year())})
   };
 
@@ -235,13 +236,22 @@ function App() {
               ))}
             </Select>
           </FormControl>
+          {/* Rating */}
+          <div className="searchBar_Margin">
+            <TextField 
+            label="tmdb Rating 0 - 10"
+            type="number"
+            inputProps={{ min: 0 }}
+            onChange={handleRatingConditionChange}
+             />
+          </div>
           {/* Date */}
-          <div style={{ marginLeft: "1%", width: "20%" }}>
+          <div className="searchBar_Margin">
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
                 label={"Release Year"}
                 views={["year"]}
-                onChange={handleDate}
+                onChange={handleDateConditionChange}
               />
             </LocalizationProvider>
           </div>

@@ -96,3 +96,8 @@
   bottom: 0;
   width: auto;
 }
+
+.searchBar_Margin {
+  margin-left: 1%;
+  width: 20%
+}
