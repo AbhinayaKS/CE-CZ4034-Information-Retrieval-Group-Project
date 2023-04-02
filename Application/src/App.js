@@ -29,7 +29,7 @@ function App() {
   const [genre, setGenre] = useState([]);
   const [filteredGenre, setFilteredGenre] = useState([]);
   const [prod_Company, setProd_Company] = useState([]);
-  const [filteredCompany, setFilteredCompany] = useState([]);
+  const [filteredCompany, setFilteredCompany] = useState('None');
   const [suggestions, setSuggestions] = useState([]);
   const [results, setResults] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
@@ -66,7 +66,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(condition)
     let filteredData = results;
     if (condition.genre.length > 0) {
       filteredData = filteredData.filter((result) => {
@@ -96,7 +95,7 @@ function App() {
     if (condition.releaseYear !== "None" && condition.releaseYear !== "undefined") {
       filteredData = filteredData.filter((results) => {
         let movieYear = String(results.Release_Date).split("-")[0];
-        return String(movieYear) == String(condition.releaseYear);
+        return String(movieYear) === String(condition.releaseYear);
       });
     }
 
@@ -104,7 +103,7 @@ function App() {
   }, [condition, results]);
 
   useEffect(() => {
-    if (query.length == 0) {
+    if (query.length === 0) {
       fetchMovies();
     }
   }, [query]);
@@ -144,15 +143,44 @@ function App() {
     } else {
       setCondition({ ...condition, releaseYear: "None" });
     }
-    
   };
+
+  
 
   // function to search movie by name
   const searchByName = async (q) => {
+    const regex = /^[A-Za-z]+$/; // regex to match only English letters
+    if (!regex.test(q)) {
+      const encodedParams = new URLSearchParams();
+      encodedParams.append("q", q);
+      encodedParams.append("target", "en");
+
+      const options = {
+        method: 'POST',
+        url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'Accept-Encoding': 'application/gzip',
+          'X-RapidAPI-Key': 'af2b91df06msh961af104aefe423p14fa7ajsnc775a715f550',
+          'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+        },
+        data: encodedParams
+      };
+
+      try {
+        const response = await axios.request(options);
+        q = response.data.data.translations[0].translatedText;
+        // q = response.data.translations[0].translatedText;
+      } catch (error) {
+        console.error(error);
+      }
+    } 
+
+
     const response = await axios.get(
       `http://localhost:8983/solr/movie/spell?fl=Movie_Name%2CGenre_s_%2Ctmdb_Rating%2CUser_Rating%2CProduction_Company%2CRelease_Date%2CReview_Content&q=Movie_Name:"${q}"&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true&spellcheck.collate=true&spellcheck.maxCollations=3&rows=10000`
     );
-    console.log(response);
+    
     if (response.data.response.numFound > 0) {
       setResults(response.data.response.docs);
       setSuggestions([]);
@@ -163,7 +191,6 @@ function App() {
           collation.collationQuery.replace(/^.*?"(.+?)".*?$/, "$1")
         );
       setSuggestions(collationQuery);
-      console.log(response.data.spellcheck.collations);
       setResults([]);
     } else {
       setResults([]);
@@ -267,7 +294,7 @@ function App() {
                   },
                 }}
                 onAccept={(newDate) => {
-                  console.log(newDate);
+                  // do nothing
                 }}
                 label={"Release Year"}
                 views={["year"]}
