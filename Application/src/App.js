@@ -33,6 +33,7 @@ function App() {
   const [suggestions, setSuggestions] = useState([]);
   const [results, setResults] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
+  const [timeTaken, setTimeTaken] = useState(null);
 
   const [condition, setCondition] = useState({
     genre: [],
@@ -60,9 +61,14 @@ function App() {
   }
 
   useEffect(() => {
+    const startTime = performance.now();
     fetchMovies();
     fetchGenre();
     fetchProd_Company();
+    const endTime = performance.now();
+    const elapsedTime = endTime - startTime;
+    console.log(elapsedTime)
+    setTimeTaken(elapsedTime.toFixed(3));
   }, []);
 
   useEffect(() => {
@@ -176,7 +182,6 @@ function App() {
       }
     } 
 
-
     const response = await axios.get(
       `http://localhost:8983/solr/movie/spell?fl=Movie_Name%2CGenre_s_%2Ctmdb_Rating%2CUser_Rating%2CProduction_Company%2CRelease_Date%2CReview_Content&q=Movie_Name:"${q}"&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true&spellcheck.collate=true&spellcheck.maxCollations=3&rows=10000`
     );
@@ -205,11 +210,15 @@ function App() {
 
   const submit = (e) => {
     e.preventDefault();
+    const startTime = performance.now();
     try {
       searchByName(query);
     } catch (error) {
       console.error(error);
     }
+    const endTime = performance.now();
+    const elapsedTime = endTime - startTime;
+    setTimeTaken(elapsedTime.toFixed(3));
   };
 
   return (
@@ -322,6 +331,7 @@ function App() {
               ))}
             </Select>
           </FormControl>
+          {timeTaken?<p>Time taken: {timeTaken}s</p>:''}
         </div>
         <ResultComponent data={filteredResults} />
       </div>
