@@ -17,7 +17,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 function App() {
-  const movies_url = `http://localhost:8983/solr/movie/select?fl=Movie_Name%2CGenre_s_%2Ctmdb_Rating%2CUser_Rating%2CProduction_Company%2CRelease_Date%2CReview_Content&indent=true&q.op=OR&q=*%3A*&rows=10000&useParams=`;
+  const movies_url = `http://localhost:8983/solr/movie/select?fl=Movie_Name%2CGenre_s_%2Ctmdb_Rating%2CUser_Rating%2CProduction_Company%2CRelease_Date%2CReview_Content%2CSentiment%2CSarcasm&indent=true&q.op=OR&q=*%3A*&rows=10000&useParams=`;
 
   const genres_url =
     "http://localhost:8983/solr/movie/select?q=*:*&facet.field={!key=distinctGenre}distinctGenre&facet=on&rows=0&wt=json&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}";
@@ -29,7 +29,7 @@ function App() {
   const [genre, setGenre] = useState([]);
   const [filteredGenre, setFilteredGenre] = useState([]);
   const [prod_Company, setProd_Company] = useState([]);
-  const [filteredCompany, setFilteredCompany] = useState('None');
+  const [filteredCompany, setFilteredCompany] = useState("None");
   const [suggestions, setSuggestions] = useState([]);
   const [results, setResults] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
@@ -67,7 +67,7 @@ function App() {
     fetchProd_Company();
     const endTime = performance.now();
     const elapsedTime = endTime - startTime;
-    console.log(elapsedTime)
+    console.log(elapsedTime);
     setTimeTaken(elapsedTime.toFixed(3));
   }, []);
 
@@ -98,7 +98,10 @@ function App() {
       );
     }
 
-    if (condition.releaseYear !== "None" && condition.releaseYear !== "undefined") {
+    if (
+      condition.releaseYear !== "None" &&
+      condition.releaseYear !== "undefined"
+    ) {
       filteredData = filteredData.filter((results) => {
         let movieYear = String(results.Release_Date).split("-")[0];
         return String(movieYear) === String(condition.releaseYear);
@@ -151,8 +154,6 @@ function App() {
     }
   };
 
-  
-
   // function to search movie by name
   const searchByName = async (q) => {
     const regex = /^[A-Za-z]+$/; // regex to match only English letters
@@ -162,15 +163,16 @@ function App() {
       encodedParams.append("target", "en");
 
       const options = {
-        method: 'POST',
-        url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
+        method: "POST",
+        url: "https://google-translate1.p.rapidapi.com/language/translate/v2",
         headers: {
-          'content-type': 'application/x-www-form-urlencoded',
-          'Accept-Encoding': 'application/gzip',
-          'X-RapidAPI-Key': 'af2b91df06msh961af104aefe423p14fa7ajsnc775a715f550',
-          'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+          "content-type": "application/x-www-form-urlencoded",
+          "Accept-Encoding": "application/gzip",
+          "X-RapidAPI-Key":
+            "af2b91df06msh961af104aefe423p14fa7ajsnc775a715f550",
+          "X-RapidAPI-Host": "google-translate1.p.rapidapi.com",
         },
-        data: encodedParams
+        data: encodedParams,
       };
 
       try {
@@ -180,12 +182,12 @@ function App() {
       } catch (error) {
         console.error(error);
       }
-    } 
+    }
 
     const response = await axios.get(
-      `http://localhost:8983/solr/movie/spell?fl=Movie_Name%2CGenre_s_%2Ctmdb_Rating%2CUser_Rating%2CProduction_Company%2CRelease_Date%2CReview_Content&q=Movie_Name:"${q}"&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true&spellcheck.collate=true&spellcheck.maxCollations=3&rows=10000`
+      `http://localhost:8983/solr/movie/spell?fl=Movie_Name%2CGenre_s_%2Ctmdb_Rating%2CUser_Rating%2CProduction_Company%2CRelease_Date%2CReview_Content%2CSentiment%2CSarcasm&q=Movie_Name:"${q}"&spellcheck.build=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.reload=true&spellcheck.collate=true&spellcheck.maxCollations=3&rows=10000`
     );
-    
+
     if (response.data.response.numFound > 0) {
       setResults(response.data.response.docs);
       setSuggestions([]);
@@ -331,7 +333,7 @@ function App() {
               ))}
             </Select>
           </FormControl>
-          {timeTaken?<p>Time taken: {timeTaken}s</p>:''}
+          {timeTaken ? <p>Time taken: {timeTaken}s</p> : ""}
         </div>
         <ResultComponent data={filteredResults} />
       </div>
