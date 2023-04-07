@@ -1,0 +1,2 @@
+127.0.0.1 - - [05/Apr/2023:05:51:38 +0000] "GET /solr/admin/info/system?wt=json HTTP/1.1" 200 5218
+127.0.0.1 - - [05/Apr/2023:05:51:44 +0000] "GET /solr/movie/select?fl=Movie_Name%2CGenre_s_%2Ctmdb_Rating%2CUser_Rating%2CProduction_Company%2CRelease_Date%2CReview_Content&indent=true&q.op=OR&q=*%3A*&rows=10000&useParams= HTTP/1.1" 200 6245849

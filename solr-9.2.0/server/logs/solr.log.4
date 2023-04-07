@@ -1,159 +1,62 @@
-2023-03-28 11:02:14.783 INFO  (main) [] o.e.j.s.Server jetty-10.0.13; built: 2022-12-07T20:13:20.134Z; git: 1c2636ea05c0ca8de1ffd6ca7f3a98ac084c766d; jvm 20+36-2344
-2023-03-28 11:02:15.446 WARN  (main) [] o.e.j.u.DeprecationWarning Using @Deprecated Class org.eclipse.jetty.servlet.listener.ELContextCleaner
-2023-03-28 11:02:15.475 INFO  (main) [] o.a.s.s.CoreContainerProvider Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
-2023-03-28 11:02:15.481 INFO  (main) [] o.a.s.s.CoreContainerProvider  ___      _       Welcome to Apache Solr™ version 9.2.0
-2023-03-28 11:02:15.481 INFO  (main) [] o.a.s.s.CoreContainerProvider / __| ___| |_ _   Starting in standalone mode on port 8983
-2023-03-28 11:02:15.482 INFO  (main) [] o.a.s.s.CoreContainerProvider \__ \/ _ \ | '_|  Install dir: C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0
-2023-03-28 11:02:15.482 INFO  (main) [] o.a.s.s.CoreContainerProvider |___/\___/_|_|    Start time: 2023-03-28T11:02:15.482293100Z
-2023-03-28 11:02:15.485 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr started with "-XX:+CrashOnOutOfMemoryError" that will crash on any OutOfMemoryError exception. The cause of the OOME will be logged in the crash file at the following path: C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\logs\jvm_crash_17524.log
-2023-03-28 11:02:15.494 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr Home: C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\solr (source: system property: solr.solr.home)
-2023-03-28 11:02:15.496 INFO  (main) [] o.a.s.c.SolrXmlConfig Loading solr.xml from C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\solr\solr.xml
-2023-03-28 11:02:15.572 INFO  (main) [] o.a.s.c.SolrResourceLoader Added 1 libs to classloader, from paths: [/C:/Users/User/Desktop/3.2/CZ4034%20Information%20Retrieval/Assignment/CE-CZ4034-Information-Retrieval-Group-Project/Application/solr-9.2.0/lib]
-2023-03-28 11:02:16.742 WARN  (main) [] o.a.s.u.StartupLoggingUtils Jetty request logging enabled. Will retain logs for last 3 days. See chapter "Configuring Logging" in reference guide for how to configure.
-2023-03-28 11:02:16.743 WARN  (main) [] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
-2023-03-28 11:02:16.990 INFO  (main) [] o.a.s.c.CorePropertiesLocator Found 0 core definitions underneath C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\solr
-2023-03-28 11:02:17.438 INFO  (main) [] o.a.s.j.SolrRequestAuthorizer Creating a new SolrRequestAuthorizer
-2023-03-28 11:02:17.844 INFO  (main) [] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@7692cd34{solr-jetty-context.xml,/solr,file:///C:/Users/User/Desktop/3.2/CZ4034%20Information%20Retrieval/Assignment/CE-CZ4034-Information-Retrieval-Group-Project/Application/solr-9.2.0/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server/solr-webapp/webapp}
-2023-03-28 11:02:17.853 INFO  (main) [] o.e.j.s.RequestLogWriter Opened C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\logs\2023_03_28.request.log
-2023-03-28 11:02:17.860 INFO  (main) [] o.e.j.s.AbstractConnector Started ServerConnector@7b139eab{HTTP/1.1, (http/1.1, h2c)}{127.0.0.1:8983}
-2023-03-28 11:02:17.862 INFO  (main) [] o.e.j.s.Server Started Server@7cbee484{STARTING}[10.0.13,sto=0] @5069ms
-2023-03-28 11:02:19.531 INFO  (qtp905080434-40) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=63
-2023-03-28 11:02:22.331 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001342281} status=0 QTime=2
-2023-03-28 11:02:22.336 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680001342281} status=0 QTime=0
-2023-03-28 11:02:22.377 INFO  (qtp905080434-35) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001342281} status=0 QTime=47
-2023-03-28 11:02:36.736 INFO  (qtp905080434-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=34
-2023-03-28 11:02:36.785 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=32
-2023-03-28 11:02:36.794 INFO  (qtp905080434-39) [ x:movies] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=movies&action=STATUS&wt=json} status=0 QTime=0
-2023-03-28 11:02:36.799 INFO  (qtp905080434-40) [ x:movies] o.a.s.h.a.CoreAdminOperation core create command name=movies&action=CREATE&instanceDir=movies&wt=json
-2023-03-28 11:02:36.829 INFO  (qtp905080434-40) [ x:movies] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.4.0
-2023-03-28 11:02:36.902 INFO  (qtp905080434-40) [ x:movies] o.a.s.s.IndexSchema Schema name=default-config
-2023-03-28 11:02:37.203 INFO  (qtp905080434-40) [ x:movies] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2023-03-28 11:02:37.203 INFO  (qtp905080434-40) [ x:movies] o.a.s.c.CoreContainer Creating SolrCore 'movies' using configuration from instancedir C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\solr\movies, trusted=true
-2023-03-28 11:02:37.225 INFO  (qtp905080434-40) [ x:movies] o.a.s.c.SolrCore Opening new SolrCore at [C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\solr\movies], dataDir=[C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\solr\movies\data\]
-2023-03-28 11:02:37.762 INFO  (qtp905080434-40) [ x:movies] o.a.s.j.SolrRequestAuthorizer Creating a new SolrRequestAuthorizer
-2023-03-28 11:02:37.773 INFO  (qtp905080434-40) [ x:movies] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2023-03-28 11:02:37.773 INFO  (qtp905080434-40) [ x:movies] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2023-03-28 11:02:37.792 INFO  (qtp905080434-40) [ x:movies] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2023-03-28 11:02:37.792 INFO  (qtp905080434-40) [ x:movies] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2023-03-28 11:02:37.877 INFO  (qtp905080434-40) [ x:movies] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\solr\movies\conf
-2023-03-28 11:02:37.891 INFO  (qtp905080434-40) [ x:movies] o.a.s.s.DirectSolrSpellChecker init: {accuracy=0.5, maxQueryFrequency=0.01, maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4, name=default, field=_text_, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal}
-2023-03-28 11:02:37.899 INFO  (qtp905080434-40) [ x:movies] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2023-03-28 11:02:37.905 INFO  (searcherExecutor-12-thread-1-processing-movies) [ x:movies] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2023-03-28 11:02:37.905 INFO  (searcherExecutor-12-thread-1-processing-movies) [ x:movies] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2023-03-28 11:02:37.907 INFO  (qtp905080434-40) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={name=movies&action=CREATE&instanceDir=movies&wt=json} status=0 QTime=1108
-2023-03-28 11:02:37.916 INFO  (searcherExecutor-12-thread-1-processing-movies) [ x:movies] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
-2023-03-28 11:02:40.715 INFO  (qtp905080434-40) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:40.721 INFO  (qtp905080434-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680001360664} status=0 QTime=6
-2023-03-28 11:02:40.769 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=55
-2023-03-28 11:02:40.775 INFO  (qtp905080434-34) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:40.789 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680001360664} status=0 QTime=4
-2023-03-28 11:02:40.826 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=45
-2023-03-28 11:02:42.033 INFO  (qtp905080434-34) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:42.040 INFO  (qtp905080434-39) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1680001362014} status=0 QTime=5
-2023-03-28 11:02:42.045 INFO  (qtp905080434-37) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1680001362014} status=0 QTime=10
-2023-03-28 11:02:42.055 INFO  (qtp905080434-40) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1680001360664&ts=1680001360664} status=503 QTime=4
-2023-03-28 11:02:42.119 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=79
-2023-03-28 11:02:42.126 INFO  (qtp905080434-41) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1680001362014} status=0 QTime=80
-2023-03-28 11:02:43.013 INFO  (qtp905080434-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:43.049 INFO  (qtp905080434-34) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001362014} status=0 QTime=16
-2023-03-28 11:02:43.082 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=56
-2023-03-28 11:02:43.793 INFO  (qtp905080434-39) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={wt=json&_=1680001360664&ts=1680001360664} hits=0 status=0 QTime=32
-2023-03-28 11:02:43.793 INFO  (qtp905080434-39) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={wt=json&_=1680001360664&ts=1680001360664} status=0 QTime=32
-2023-03-28 11:02:44.498 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:44.502 INFO  (qtp905080434-32) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001362014} status=0 QTime=3
-2023-03-28 11:02:44.512 INFO  (qtp905080434-37) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680001364476} status=0 QTime=8
-2023-03-28 11:02:44.569 INFO  (qtp905080434-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=66
-2023-03-28 11:02:44.581 INFO  (qtp905080434-40) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680001362014} status=0 QTime=0
-2023-03-28 11:02:47.194 INFO  (qtp905080434-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:47.197 INFO  (qtp905080434-41) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001362014} status=0 QTime=1
-2023-03-28 11:02:47.197 INFO  (qtp905080434-39) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680001364476} status=0 QTime=0
-2023-03-28 11:02:47.252 INFO  (qtp905080434-32) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680001362014} status=0 QTime=1
-2023-03-28 11:02:47.260 INFO  (qtp905080434-34) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=64
-2023-03-28 11:02:52.431 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:52.448 INFO  (qtp905080434-41) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/segments params={wt=json&_=1680001372420} status=0 QTime=4
-2023-03-28 11:02:52.487 INFO  (qtp905080434-34) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=47
-2023-03-28 11:02:53.138 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:53.144 INFO  (qtp905080434-32) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001362014} status=0 QTime=2
-2023-03-28 11:02:53.149 INFO  (qtp905080434-40) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680001364476} status=0 QTime=0
-2023-03-28 11:02:53.205 INFO  (qtp905080434-39) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680001362014} status=0 QTime=0
-2023-03-28 11:02:53.214 INFO  (qtp905080434-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=72
-2023-03-28 11:02:53.678 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:53.681 INFO  (qtp905080434-37) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1680001362014} status=0 QTime=2
-2023-03-28 11:02:53.718 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=39
-2023-03-28 11:02:54.337 INFO  (qtp905080434-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:54.339 INFO  (qtp905080434-38) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1680001374309} status=0 QTime=0
-2023-03-28 11:02:54.373 INFO  (qtp905080434-40) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=34
-2023-03-28 11:02:54.758 INFO  (qtp905080434-37) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={wt=json&_=1680001360664&ts=1680001360664} hits=0 status=0 QTime=4
-2023-03-28 11:02:54.758 INFO  (qtp905080434-37) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={wt=json&_=1680001360664&ts=1680001360664} status=0 QTime=4
-2023-03-28 11:02:55.223 INFO  (qtp905080434-40) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:55.226 INFO  (qtp905080434-32) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1680001374309} status=0 QTime=0
-2023-03-28 11:02:55.268 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=42
-2023-03-28 11:02:55.697 INFO  (qtp905080434-40) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:55.708 INFO  (qtp905080434-37) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1680001375681} status=0 QTime=4
-2023-03-28 11:02:55.755 INFO  (qtp905080434-41) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=nppBackup&wt=json&_=1680001375681} status=0 QTime=26
-2023-03-28 11:02:55.766 INFO  (qtp905080434-32) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1680001375681} status=0 QTime=37
-2023-03-28 11:02:55.779 INFO  (qtp905080434-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=75
-2023-03-28 11:02:56.461 INFO  (qtp905080434-40) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:02:56.466 INFO  (qtp905080434-39) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1680001374309} status=0 QTime=0
-2023-03-28 11:02:56.518 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=55
-2023-03-28 11:03:19.707 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:03:19.720 INFO  (qtp905080434-40) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001362014} status=0 QTime=4
-2023-03-28 11:03:19.756 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=46
-2023-03-28 11:03:26.255 INFO  (qtp905080434-32) [ x:movies] o.a.s.u.p.LogUpdateProcessorFactory webapp=/solr path=/update params={commitWithin=1000&overwrite=true&wt=json}{} 0 236
-2023-03-28 11:03:26.255 ERROR (qtp905080434-32) [ x:movies] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: ERROR: [doc=ff50df0a-1308-4246-b0d2-4f26a69afa3c] Error adding field 'Movie_Id'='3.0' msg=For input string: "3.0" => org.apache.solr.common.SolrException: ERROR: [doc=ff50df0a-1308-4246-b0d2-4f26a69afa3c] Error adding field 'Movie_Id'='3.0' msg=For input string: "3.0"
-	at org.apache.solr.update.DocumentBuilder.toDocument(DocumentBuilder.java:258)
-org.apache.solr.common.SolrException: ERROR: [doc=ff50df0a-1308-4246-b0d2-4f26a69afa3c] Error adding field 'Movie_Id'='3.0' msg=For input string: "3.0"
-	at org.apache.solr.update.DocumentBuilder.toDocument(DocumentBuilder.java:258) ~[?:?]
-	at org.apache.solr.update.DocumentBuilder.toDocument(DocumentBuilder.java:100) ~[?:?]
-	at org.apache.solr.update.AddUpdateCommand.lambda$makeLuceneDocs$0(AddUpdateCommand.java:233) ~[?:?]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[?:?]
-	at java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1602) ~[?:?]
-	at java.util.stream.StreamSpliterators$WrappingSpliterator.lambda$initPartialTraversalState$0(StreamSpliterators.java:292) ~[?:?]
-	at java.util.stream.StreamSpliterators$AbstractWrappingSpliterator.fillBuffer(StreamSpliterators.java:206) ~[?:?]
-	at java.util.stream.StreamSpliterators$AbstractWrappingSpliterator.doAdvance(StreamSpliterators.java:161) ~[?:?]
-	at java.util.stream.StreamSpliterators$WrappingSpliterator.tryAdvance(StreamSpliterators.java:298) ~[?:?]
-	at java.util.Spliterators$1Adapter.hasNext(Spliterators.java:681) ~[?:?]
-	at org.apache.lucene.index.DocumentsWriterPerThread.updateDocuments(DocumentsWriterPerThread.java:232) ~[?:?]
-	at org.apache.lucene.index.DocumentsWriter.updateDocuments(DocumentsWriter.java:432) ~[?:?]
-	at org.apache.lucene.index.IndexWriter.updateDocuments(IndexWriter.java:1533) ~[?:?]
-	at org.apache.lucene.index.IndexWriter.updateDocuments(IndexWriter.java:1522) ~[?:?]
-	at org.apache.solr.update.DirectUpdateHandler2.updateDocOrDocValues(DirectUpdateHandler2.java:1050) ~[?:?]
-	at org.apache.solr.update.DirectUpdateHandler2.doNormalUpdate(DirectUpdateHandler2.java:409) ~[?:?]
-	at org.apache.solr.update.DirectUpdateHandler2.addDoc0(DirectUpdateHandler2.java:362) ~[?:?]
-	at org.apache.solr.update.DirectUpdateHandler2.addDoc(DirectUpdateHandler2.java:299) ~[?:?]
-	at org.apache.solr.update.processor.RunUpdateProcessorFactory$RunUpdateProcessor.processAdd(RunUpdateProcessorFactory.java:76) ~[?:?]
-	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:55) ~[?:?]
-	at org.apache.solr.update.processor.NestedUpdateProcessorFactory$NestedUpdateProcessor.processAdd(NestedUpdateProcessorFactory.java:79) ~[?:?]
-	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:55) ~[?:?]
-	at org.apache.solr.update.processor.DistributedUpdateProcessor.doLocalAdd(DistributedUpdateProcessor.java:270) ~[?:?]
-	at org.apache.solr.update.processor.DistributedUpdateProcessor.doVersionAdd(DistributedUpdateProcessor.java:545) ~[?:?]
-	at org.apache.solr.update.processor.DistributedUpdateProcessor.lambda$versionAdd$0(DistributedUpdateProcessor.java:357) ~[?:?]
-	at org.apache.solr.update.VersionBucket.runWithLock(VersionBucket.java:51) ~[?:?]
-	at org.apache.solr.update.processor.DistributedUpdateProcessor.versionAdd(DistributedUpdateProcessor.java:354) ~[?:?]
-	at org.apache.solr.update.processor.DistributedUpdateProcessor.processAdd(DistributedUpdateProcessor.java:236) ~[?:?]
-	at org.apache.solr.update.processor.LogUpdateProcessorFactory$LogUpdateProcessor.processAdd(LogUpdateProcessorFactory.java:111) ~[?:?]
-	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:55) ~[?:?]
-	at org.apache.solr.update.processor.AddSchemaFieldsUpdateProcessorFactory$AddSchemaFieldsUpdateProcessor.processAdd(AddSchemaFieldsUpdateProcessorFactory.java:535) ~[?:?]
-	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:55) ~[?:?]
-	at org.apache.solr.update.processor.FieldMutatingUpdateProcessor.processAdd(FieldMutatingUpdateProcessor.java:111) ~[?:?]
-	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:55) ~[?:?]
-	at org.apache.solr.update.processor.FieldMutatingUpdateProcessor.processAdd(FieldMutatingUpdateProcessor.java:111) ~[?:?]
-	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:55) ~[?:?]
-	at org.apache.solr.update.processor.FieldMutatingUpdateProcessor.processAdd(FieldMutatingUpdateProcessor.java:111) ~[?:?]
-	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:55) ~[?:?]
-	at org.apache.solr.update.processor.FieldMutatingUpdateProcessor.processAdd(FieldMutatingUpdateProcessor.java:111) ~[?:?]
-	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:55) ~[?:?]
-	at org.apache.solr.update.processor.FieldNameMutatingUpdateProcessorFactory$1.processAdd(FieldNameMutatingUpdateProcessorFactory.java:71) ~[?:?]
-	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:55) ~[?:?]
-	at org.apache.solr.update.processor.FieldMutatingUpdateProcessor.processAdd(FieldMutatingUpdateProcessor.java:111) ~[?:?]
-	at org.apache.solr.update.processor.UpdateRequestProcessor.processAdd(UpdateRequestProcessor.java:55) ~[?:?]
-	at org.apache.solr.update.processor.AbstractDefaultValueUpdateProcessorFactory$DefaultValueUpdateProcessor.processAdd(AbstractDefaultValueUpdateProcessorFactory.java:82) ~[?:?]
-	at org.apache.solr.handler.loader.CSVLoaderBase.doAdd(CSVLoaderBase.java:441) ~[?:?]
-	at org.apache.solr.handler.loader.SingleThreadedCSVLoader.addDoc(CSVLoader.java:47) ~[?:?]
-	at org.apache.solr.handler.loader.CSVLoaderBase.load(CSVLoaderBase.java:410) ~[?:?]
-	at org.apache.solr.handler.loader.CSVLoader.load(CSVLoader.java:34) ~[?:?]
-	at org.apache.solr.handler.UpdateRequestHandler$1.load(UpdateRequestHandler.java:101) ~[?:?]
-	at org.apache.solr.handler.ContentStreamHandlerBase.handleRequestBody(ContentStreamHandlerBase.java:84) ~[?:?]
+2023-03-29 15:04:20.621 INFO  (main) [] o.e.j.s.Server jetty-10.0.13; built: 2022-12-07T20:13:20.134Z; git: 1c2636ea05c0ca8de1ffd6ca7f3a98ac084c766d; jvm 20+36-2344
+2023-03-29 15:04:21.377 WARN  (main) [] o.e.j.u.DeprecationWarning Using @Deprecated Class org.eclipse.jetty.servlet.listener.ELContextCleaner
+2023-03-29 15:04:21.410 INFO  (main) [] o.a.s.s.CoreContainerProvider Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2023-03-29 15:04:21.418 INFO  (main) [] o.a.s.s.CoreContainerProvider  ___      _       Welcome to Apache Solr™ version 9.2.0
+2023-03-29 15:04:21.418 INFO  (main) [] o.a.s.s.CoreContainerProvider / __| ___| |_ _   Starting in standalone mode on port 8983
+2023-03-29 15:04:21.418 INFO  (main) [] o.a.s.s.CoreContainerProvider \__ \/ _ \ | '_|  Install dir: C:\Users\User\Desktop\solr-9.2.0
+2023-03-29 15:04:21.418 INFO  (main) [] o.a.s.s.CoreContainerProvider |___/\___/_|_|    Start time: 2023-03-29T15:04:21.418298100Z
+2023-03-29 15:04:21.420 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr started with "-XX:+CrashOnOutOfMemoryError" that will crash on any OutOfMemoryError exception. The cause of the OOME will be logged in the crash file at the following path: C:\Users\User\Desktop\solr-9.2.0\server\logs\jvm_crash_22320.log
+2023-03-29 15:04:21.429 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr Home: C:\Users\User\Desktop\solr-9.2.0\server\solr (source: system property: solr.solr.home)
+2023-03-29 15:04:21.432 INFO  (main) [] o.a.s.c.SolrXmlConfig Loading solr.xml from C:\Users\User\Desktop\solr-9.2.0\server\solr\solr.xml
+2023-03-29 15:04:21.530 INFO  (main) [] o.a.s.c.SolrResourceLoader Added 1 libs to classloader, from paths: [/C:/Users/User/Desktop/solr-9.2.0/lib]
+2023-03-29 15:04:22.709 WARN  (main) [] o.a.s.u.StartupLoggingUtils Jetty request logging enabled. Will retain logs for last 3 days. See chapter "Configuring Logging" in reference guide for how to configure.
+2023-03-29 15:04:22.710 WARN  (main) [] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2023-03-29 15:04:23.008 INFO  (main) [] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath C:\Users\User\Desktop\solr-9.2.0\server\solr
+2023-03-29 15:04:23.008 INFO  (main) [] o.a.s.c.CorePropertiesLocator Cores are: [movie]
+2023-03-29 15:04:23.037 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.4.0
+2023-03-29 15:04:23.112 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.s.IndexSchema Schema name=default-config
+2023-03-29 15:04:23.465 INFO  (main) [] o.a.s.j.SolrRequestAuthorizer Creating a new SolrRequestAuthorizer
+2023-03-29 15:04:23.470 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2023-03-29 15:04:23.470 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.c.CoreContainer Creating SolrCore 'movie' using configuration from instancedir C:\Users\User\Desktop\solr-9.2.0\server\solr\movie, trusted=true
+2023-03-29 15:04:23.520 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.c.SolrCore Opening new SolrCore at [C:\Users\User\Desktop\solr-9.2.0\server\solr\movie], dataDir=[C:\Users\User\Desktop\solr-9.2.0\server\solr\movie\data\]
+2023-03-29 15:04:24.019 INFO  (main) [] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@27a0a5a2{solr-jetty-context.xml,/solr,file:///C:/Users/User/Desktop/solr-9.2.0/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\User\Desktop\solr-9.2.0\server/solr-webapp/webapp}
+2023-03-29 15:04:24.028 INFO  (main) [] o.e.j.s.RequestLogWriter Opened C:\Users\User\Desktop\solr-9.2.0\server\logs\2023_03_29.request.log
+2023-03-29 15:04:24.038 INFO  (main) [] o.e.j.s.AbstractConnector Started ServerConnector@30ea8c23{HTTP/1.1, (http/1.1, h2c)}{127.0.0.1:8983}
+2023-03-29 15:04:24.038 INFO  (main) [] o.e.j.s.Server Started Server@7bb3a9fe{STARTING}[10.0.13,sto=0] @5393ms
+2023-03-29 15:04:24.189 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.j.SolrRequestAuthorizer Creating a new SolrRequestAuthorizer
+2023-03-29 15:04:24.201 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2023-03-29 15:04:24.201 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2023-03-29 15:04:24.226 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2023-03-29 15:04:24.226 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2023-03-29 15:04:24.438 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\User\Desktop\solr-9.2.0\server\solr\movie\conf
+2023-03-29 15:04:24.458 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.s.DirectSolrSpellChecker init: {name=default, field=Movie_Name, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal, accuracy=0.5, maxQueryFrequency=0.01, maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4}
+2023-03-29 15:04:24.466 INFO  (coreLoadExecutor-10-thread-1) [ x:movie] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2023-03-29 15:04:24.481 INFO  (searcherExecutor-12-thread-1-processing-movie) [ x:movie] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2023-03-29 15:04:24.481 INFO  (searcherExecutor-12-thread-1-processing-movie) [ x:movie] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2023-03-29 15:04:24.488 INFO  (searcherExecutor-12-thread-1-processing-movie) [ x:movie] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2023-03-29 15:04:25.598 INFO  (qtp1635378213-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=43
+2023-03-29 15:04:57.888 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.PluginBag Going to create a new requestHandler with {type = requestHandler,name = /spell,class = solr.SearchHandler,attributes = {startup=lazy, name=/spell, class=solr.SearchHandler},args = {last-components=[spellcheck], defaults={spellcheck.dictionary=default, spellcheck=on, spellcheck.extendedResults=true, spellcheck.count=10, spellcheck.alternativeTermCount=5, spellcheck.maxResultsForSuggest=5, spellcheck.collate=true, spellcheck.collateExtendedResults=true, spellcheck.maxCollationTries=10, spellcheck.maxCollations=5, df=_text_}}} 
+2023-03-29 15:04:57.912 ERROR (qtp1635378213-38) [ x:movie] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: undefined field _name => org.apache.solr.common.SolrException: undefined field _name
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1479)
+org.apache.solr.common.SolrException: undefined field _name
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1479) ~[?:?]
+	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:501) ~[?:?]
+	at org.apache.lucene.analysis.DelegatingAnalyzerWrapper$DelegatingReuseStrategy.getReusableComponents(DelegatingAnalyzerWrapper.java:83) ~[?:?]
+	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:184) ~[?:?]
+	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:256) ~[?:?]
+	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:527) ~[?:?]
+	at org.apache.solr.parser.QueryParser.newFieldQuery(QueryParser.java:68) ~[?:?]
+	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:1139) ~[?:?]
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:855) ~[?:?]
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:454) ~[?:?]
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:293) ~[?:?]
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:173) ~[?:?]
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:143) ~[?:?]
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:274) ~[?:?]
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:51) ~[?:?]
+	at org.apache.solr.search.QParser.getQuery(QParser.java:188) ~[?:?]
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:171) ~[?:?]
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:389) ~[?:?]
 	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:224) ~[?:?]
 	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2890) ~[?:?]
 	at org.apache.solr.servlet.HttpSolrCall.executeCoreRequest(HttpSolrCall.java:872) ~[?:?]
@@ -164,6 +67,10 @@ org.apache.solr.common.SolrException: ERROR: [doc=ff50df0a-1308-4246-b0d2-4f26a6
 	at org.apache.solr.servlet.ServletUtils.rateLimitRequest(ServletUtils.java:227) ~[?:?]
 	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:215) ~[?:?]
 	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:197) ~[?:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-10.0.13.jar:10.0.13]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.13.jar:10.0.13]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:313) ~[jetty-servlets-10.0.13.jar:10.0.13]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:267) ~[jetty-servlets-10.0.13.jar:10.0.13]
 	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:210) ~[jetty-servlet-10.0.13.jar:10.0.13]
 	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.13.jar:10.0.13]
 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-10.0.13.jar:10.0.13]
@@ -204,207 +111,29 @@ org.apache.solr.common.SolrException: ERROR: [doc=ff50df0a-1308-4246-b0d2-4f26a6
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:934) ~[jetty-util-10.0.13.jar:10.0.13]
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1078) ~[jetty-util-10.0.13.jar:10.0.13]
 	at java.lang.Thread.run(Thread.java:1623) [?:?]
-Caused by: java.lang.NumberFormatException: For input string: "3.0"
-	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:67) ~[?:?]
-	at java.lang.Long.parseLong(Long.java:708) ~[?:?]
-	at java.lang.Long.parseLong(Long.java:831) ~[?:?]
-	at org.apache.solr.schema.LongPointField.createField(LongPointField.java:161) ~[?:?]
-	at org.apache.solr.schema.PointField.createFields(PointField.java:270) ~[?:?]
-	at org.apache.solr.update.DocumentBuilder.addField(DocumentBuilder.java:67) ~[?:?]
-	at org.apache.solr.update.DocumentBuilder.addOriginalField(DocumentBuilder.java:302) ~[?:?]
-	at org.apache.solr.update.DocumentBuilder.toDocument(DocumentBuilder.java:218) ~[?:?]
-	... 100 more
-2023-03-28 11:03:37.129 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:03:37.176 INFO  (qtp905080434-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/threads params={wt=json&_=1680001417116} status=0 QTime=42
-2023-03-28 11:03:37.188 INFO  (qtp905080434-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=59
-2023-03-28 11:03:38.486 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:03:38.494 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/properties params={wt=json&_=1680001418466} status=0 QTime=1
-2023-03-28 11:03:38.543 INFO  (qtp905080434-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=52
-2023-03-28 11:03:39.084 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:03:39.088 INFO  (qtp905080434-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680001360664} status=0 QTime=2
-2023-03-28 11:03:39.135 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=49
-2023-03-28 11:03:39.153 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:03:39.156 INFO  (qtp905080434-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680001360664} status=0 QTime=1
-2023-03-28 11:03:39.194 INFO  (qtp905080434-40) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=40
-2023-03-28 11:03:54.404 ERROR (qtp905080434-57) [] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: Solr instance is not running in SolrCloud mode. => org.apache.solr.common.SolrException: Solr instance is not running in SolrCloud mode.
-	at org.apache.solr.handler.admin.api.AdminAPIBase.validateZooKeeperAwareCoreContainer(AdminAPIBase.java:57)
-org.apache.solr.common.SolrException: Solr instance is not running in SolrCloud mode.
-	at org.apache.solr.handler.admin.api.AdminAPIBase.validateZooKeeperAwareCoreContainer(AdminAPIBase.java:57) ~[?:?]
-	at org.apache.solr.handler.admin.CollectionsHandler.checkErrors(CollectionsHandler.java:339) ~[?:?]
-	at org.apache.solr.handler.admin.CollectionsHandler.handleRequestBody(CollectionsHandler.java:310) ~[?:?]
+2023-03-29 15:04:57.912 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=_name:homy&amp;spellcheck=true&amp;spellcheck.build=true&amp;version=2.2&amp;indent=true&amp;spellcheck.count=10&amp;rows=100000000&amp;wt=json} status=400 QTime=24
+2023-03-29 15:05:11.623 ERROR (qtp1635378213-37) [ x:movie] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: undefined field Movie_Namee => org.apache.solr.common.SolrException: undefined field Movie_Namee
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1479)
+org.apache.solr.common.SolrException: undefined field Movie_Namee
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1479) ~[?:?]
+	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:501) ~[?:?]
+	at org.apache.lucene.analysis.DelegatingAnalyzerWrapper$DelegatingReuseStrategy.getReusableComponents(DelegatingAnalyzerWrapper.java:83) ~[?:?]
+	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:184) ~[?:?]
+	at org.apache.lucene.util.QueryBuilder.createFieldQuery(QueryBuilder.java:256) ~[?:?]
+	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:527) ~[?:?]
+	at org.apache.solr.parser.QueryParser.newFieldQuery(QueryParser.java:68) ~[?:?]
+	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:1139) ~[?:?]
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:855) ~[?:?]
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:454) ~[?:?]
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:293) ~[?:?]
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:173) ~[?:?]
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:143) ~[?:?]
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:274) ~[?:?]
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:51) ~[?:?]
+	at org.apache.solr.search.QParser.getQuery(QParser.java:188) ~[?:?]
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:171) ~[?:?]
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:389) ~[?:?]
 	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:224) ~[?:?]
-	at org.apache.solr.servlet.HttpSolrCall.handleAdmin(HttpSolrCall.java:929) ~[?:?]
-	at org.apache.solr.servlet.HttpSolrCall.handleAdminRequest(HttpSolrCall.java:877) ~[?:?]
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:548) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.dispatch(SolrDispatchFilter.java:252) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.lambda$doFilter$0(SolrDispatchFilter.java:220) ~[?:?]
-	at org.apache.solr.servlet.ServletUtils.traceHttpRequestExecution2(ServletUtils.java:257) ~[?:?]
-	at org.apache.solr.servlet.ServletUtils.rateLimitRequest(ServletUtils.java:227) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:215) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:197) ~[?:?]
-	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:210) ~[jetty-servlet-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:131) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:578) ~[jetty-security-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:223) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1570) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1383) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1543) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1305) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:149) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:228) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:141) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:301) ~[jetty-rewrite-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:822) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:140) ~[jetty-util-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) ~[jetty-util-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:934) ~[jetty-util-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1078) ~[jetty-util-10.0.13.jar:10.0.13]
-	at java.lang.Thread.run(Thread.java:1623) [?:?]
-2023-03-28 11:03:54.404 INFO  (qtp905080434-57) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={name=movies&action=DELETE} status=400 QTime=0
-2023-03-28 11:04:01.292 INFO  (qtp905080434-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:04:01.297 INFO  (qtp905080434-40) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1680001362014} status=0 QTime=1
-2023-03-28 11:04:01.301 INFO  (qtp905080434-57) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1680001362014} status=0 QTime=5
-2023-03-28 11:04:01.303 INFO  (qtp905080434-37) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1680001360664&ts=1680001360664} status=503 QTime=0
-2023-03-28 11:04:01.386 INFO  (qtp905080434-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=91
-2023-03-28 11:04:01.391 INFO  (qtp905080434-41) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1680001362014} status=0 QTime=90
-2023-03-28 11:04:20.512 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:04:20.514 INFO  (qtp905080434-38) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680001364476} status=0 QTime=1
-2023-03-28 11:04:20.517 INFO  (qtp905080434-39) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001362014} status=0 QTime=6
-2023-03-28 11:04:20.556 INFO  (qtp905080434-57) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680001362014} status=0 QTime=0
-2023-03-28 11:04:20.580 INFO  (qtp905080434-34) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=69
-2023-03-28 11:04:28.744 INFO  (qtp905080434-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=1
-2023-03-28 11:04:28.745 INFO  (qtp905080434-39) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680001364476} status=0 QTime=1
-2023-03-28 11:04:28.750 INFO  (qtp905080434-57) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001362014} status=0 QTime=6
-2023-03-28 11:04:28.792 INFO  (qtp905080434-32) [ x:movies] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680001362014} status=0 QTime=0
-2023-03-28 11:04:28.808 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=64
-2023-03-28 11:04:38.859 INFO  (qtp905080434-40) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:04:38.913 INFO  (qtp905080434-57) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=53
-2023-03-28 11:04:38.945 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=28
-2023-03-28 11:04:38.954 INFO  (qtp905080434-57) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/cluster/security/authorization params={wt=json&_=1680001478826} status=0 QTime=0
-2023-03-28 11:04:39.295 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:04:39.301 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680001360664} status=0 QTime=2
-2023-03-28 11:04:39.343 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=45
-2023-03-28 11:04:39.367 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:04:39.379 INFO  (qtp905080434-40) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680001360664} status=0 QTime=5
-2023-03-28 11:04:39.416 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=43
-2023-03-28 11:04:41.817 INFO  (qtp905080434-32) [ x:movies] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.movies tag=null
-2023-03-28 11:04:41.849 INFO  (qtp905080434-32) [ x:movies] o.a.s.c.SolrCore CLOSING SolrCore org.apache.solr.core.SolrCore@207abcab movies
-2023-03-28 11:04:41.849 INFO  (qtp905080434-32) [ x:movies] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.movies tag=SolrCore@207abcab
-2023-03-28 11:04:41.852 INFO  (qtp905080434-32) [ x:movies] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2023-03-28 11:04:41.872 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=movies&action=UNLOAD&wt=json&_=1680001360664} status=0 QTime=55
-2023-03-28 11:04:41.909 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:04:41.911 INFO  (qtp905080434-57) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680001360664} status=0 QTime=0
-2023-03-28 11:04:41.956 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001360664} status=0 QTime=44
-2023-03-28 11:05:15.179 INFO  (qtp905080434-57) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=22
-2023-03-28 11:05:15.213 INFO  (qtp905080434-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=22
-2023-03-28 11:05:15.218 INFO  (qtp905080434-34) [ x:movie] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=movie&action=STATUS&wt=json} status=0 QTime=0
-2023-03-28 11:05:15.383 INFO  (qtp905080434-37) [ x:movie] o.a.s.h.a.CoreAdminOperation core create command name=movie&action=CREATE&instanceDir=movie&wt=json
-2023-03-28 11:05:15.398 INFO  (qtp905080434-37) [ x:movie] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.4.0
-2023-03-28 11:05:15.413 INFO  (qtp905080434-37) [ x:movie] o.a.s.s.IndexSchema Schema name=default-config
-2023-03-28 11:05:15.503 INFO  (qtp905080434-37) [ x:movie] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2023-03-28 11:05:15.503 INFO  (qtp905080434-37) [ x:movie] o.a.s.c.CoreContainer Creating SolrCore 'movie' using configuration from instancedir C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\solr\movie, trusted=true
-2023-03-28 11:05:15.504 INFO  (qtp905080434-37) [ x:movie] o.a.s.c.SolrCore Opening new SolrCore at [C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\solr\movie], dataDir=[C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\solr\movie\data\]
-2023-03-28 11:05:15.633 INFO  (qtp905080434-37) [ x:movie] o.a.s.j.SolrRequestAuthorizer Creating a new SolrRequestAuthorizer
-2023-03-28 11:05:15.636 INFO  (qtp905080434-37) [ x:movie] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2023-03-28 11:05:15.636 INFO  (qtp905080434-37) [ x:movie] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2023-03-28 11:05:15.640 INFO  (qtp905080434-37) [ x:movie] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2023-03-28 11:05:15.640 INFO  (qtp905080434-37) [ x:movie] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2023-03-28 11:05:15.648 INFO  (qtp905080434-37) [ x:movie] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\solr\movie\conf
-2023-03-28 11:05:15.650 INFO  (qtp905080434-37) [ x:movie] o.a.s.s.DirectSolrSpellChecker init: {accuracy=0.5, maxQueryFrequency=0.01, maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4, name=default, field=_text_, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal}
-2023-03-28 11:05:15.651 INFO  (qtp905080434-37) [ x:movie] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2023-03-28 11:05:15.651 INFO  (qtp905080434-37) [ x:movie] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1761609269275262976
-2023-03-28 11:05:15.652 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2023-03-28 11:05:15.652 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2023-03-28 11:05:15.655 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={name=movie&action=CREATE&instanceDir=movie&wt=json} status=0 QTime=272
-2023-03-28 11:05:15.659 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
-2023-03-28 11:05:20.540 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001520464} status=0 QTime=0
-2023-03-28 11:05:20.544 INFO  (qtp905080434-34) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680001520464} status=0 QTime=2
-2023-03-28 11:05:20.597 INFO  (qtp905080434-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001520464} status=0 QTime=55
-2023-03-28 11:05:20.604 INFO  (qtp905080434-40) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001520464} status=0 QTime=0
-2023-03-28 11:05:20.616 INFO  (qtp905080434-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680001520464} status=0 QTime=3
-2023-03-28 11:05:20.656 INFO  (qtp905080434-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001520464} status=0 QTime=47
-2023-03-28 11:05:22.541 INFO  (qtp905080434-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001520464} status=0 QTime=0
-2023-03-28 11:05:22.542 INFO  (qtp905080434-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1680001522212} status=0 QTime=1
-2023-03-28 11:05:22.543 INFO  (qtp905080434-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1680001520464&ts=1680001520464} status=503 QTime=0
-2023-03-28 11:05:22.547 INFO  (qtp905080434-34) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1680001522212} status=0 QTime=6
-2023-03-28 11:05:22.609 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001520464} status=0 QTime=67
-2023-03-28 11:05:22.613 INFO  (qtp905080434-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1680001522212} status=0 QTime=71
-2023-03-28 11:05:24.244 INFO  (qtp905080434-56) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001520464} status=0 QTime=0
-2023-03-28 11:05:24.246 INFO  (qtp905080434-33) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680001524224} status=0 QTime=0
-2023-03-28 11:05:24.252 INFO  (qtp905080434-32) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001522212} status=0 QTime=6
-2023-03-28 11:05:24.311 INFO  (qtp905080434-57) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001520464} status=0 QTime=65
-2023-03-28 11:05:24.320 INFO  (qtp905080434-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680001522212} status=0 QTime=0
-2023-03-28 11:05:29.928 INFO  (qtp905080434-57) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001520464} status=0 QTime=0
-2023-03-28 11:05:29.929 INFO  (qtp905080434-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001522212} status=0 QTime=1
-2023-03-28 11:05:29.977 INFO  (qtp905080434-34) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001520464} status=0 QTime=50
-2023-03-28 11:05:37.398 INFO  (qtp905080434-41) [ x:movie] o.a.s.s.ManagedIndexSchema Upgraded to managed schema at C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server\solr\movie\conf\managed-schema.xml
-2023-03-28 11:05:39.103 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2023-03-28 11:05:39.113 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.c.SolrCore Registered new searcher autowarm time: 7 ms
-2023-03-28 11:05:39.987 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2023-03-28 11:05:39.995 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
-2023-03-28 11:05:40.763 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2023-03-28 11:05:40.772 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
-2023-03-28 11:05:41.932 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2023-03-28 11:05:41.940 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
-2023-03-28 11:05:42.007 INFO  (qtp905080434-41) [ x:movie] o.a.s.u.p.LogUpdateProcessorFactory webapp=/solr path=/update params={commitWithin=1000&overwrite=true&wt=json}{add=[02381bc7-aca3-48bc-9464-3b0c972f257f (1761609292080742400), b06894d7-c97c-41aa-a140-de824aeaee5d (1761609292117442560), 6a247687-72de-41d3-ba33-b2f3bd0e65ae (1761609292118491136), 915f394b-ff8b-4b26-8263-cd46ee517d7c (1761609292120588288), c38a153a-c29d-49ef-988e-5e4a05e03963 (1761609292121636864), 63230c50-5d40-4e26-98d7-a02706387509 (1761609292122685440), 372d962d-332e-47e1-8312-39a039adada1 (1761609292124782592), 104bd849-b547-4865-aac6-ed4cec269057 (1761609292126879744), 9408aba8-0955-4e8d-bf5d-f96b7814c1c5 (1761609292128976896), 3173b43f-02c1-404c-b776-c98ff299d6ea (1761609292130025472), ... (9887 adds)]} 0 5088
-2023-03-28 11:05:42.722 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2023-03-28 11:05:42.730 INFO  (searcherExecutor-18-thread-1-processing-movie) [ x:movie] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
-2023-03-28 11:05:44.842 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001520464} status=0 QTime=0
-2023-03-28 11:05:44.847 INFO  (qtp905080434-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001522212} status=0 QTime=2
-2023-03-28 11:05:44.935 INFO  (qtp905080434-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001520464} status=0 QTime=74
-2023-03-28 11:05:44.940 INFO  (qtp905080434-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680001524224} status=0 QTime=0
-2023-03-28 11:05:44.968 INFO  (qtp905080434-32) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680001522212} status=0 QTime=23
-2023-03-28 11:05:47.111 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001520464} status=0 QTime=0
-2023-03-28 11:05:47.114 INFO  (qtp905080434-32) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680001524224} status=0 QTime=0
-2023-03-28 11:05:47.114 INFO  (qtp905080434-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001522212} status=0 QTime=1
-2023-03-28 11:05:47.180 INFO  (qtp905080434-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680001522212} status=0 QTime=10
-2023-03-28 11:05:47.192 INFO  (qtp905080434-33) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001520464} status=0 QTime=80
-2023-03-28 11:05:48.379 INFO  (qtp905080434-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={fl=Genre_s_&wt=json&_=1680001522212} status=0 QTime=2
-2023-03-28 11:05:51.939 INFO  (qtp905080434-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={fl=Genre_s_&numTerms=2&wt=json&_=1680001522212} status=0 QTime=0
-2023-03-28 11:05:51.942 INFO  (qtp905080434-56) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={fl=Genre_s_&numTerms=21&wt=json&_=1680001522212} status=0 QTime=1
-2023-03-28 11:06:19.365 INFO  (qtp905080434-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001520464} status=0 QTime=0
-2023-03-28 11:06:19.365 INFO  (qtp905080434-57) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680001524224} status=0 QTime=0
-2023-03-28 11:06:19.365 INFO  (qtp905080434-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001522212} status=0 QTime=1
-2023-03-28 11:06:19.387 INFO  (qtp905080434-56) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680001522212} status=0 QTime=4
-2023-03-28 11:06:19.404 INFO  (qtp905080434-41) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001520464} status=0 QTime=39
-2023-03-28 11:06:19.897 INFO  (qtp905080434-33) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={fl=Genre_s__str&wt=json&_=1680001522212} status=0 QTime=0
-2023-03-28 11:06:24.691 INFO  (qtp905080434-57) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680001520464} status=0 QTime=0
-2023-03-28 11:06:24.691 INFO  (qtp905080434-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680001524224} status=0 QTime=0
-2023-03-28 11:06:24.692 INFO  (qtp905080434-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680001522212} status=0 QTime=1
-2023-03-28 11:06:24.718 INFO  (qtp905080434-33) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680001522212} status=0 QTime=8
-2023-03-28 11:06:24.733 INFO  (qtp905080434-56) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680001520464} status=0 QTime=42
-2023-03-28 11:06:26.753 INFO  (qtp905080434-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={fl=Genre_s_&wt=json&_=1680001522212} status=0 QTime=1
-2023-03-28 11:06:29.828 INFO  (qtp905080434-56) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={fl=Genre_s_&numTerms=2&wt=json&_=1680001522212} status=0 QTime=5
-2023-03-28 11:06:29.879 INFO  (qtp905080434-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={fl=Genre_s_&numTerms=21&wt=json&_=1680001522212} status=0 QTime=2
-2023-03-28 11:07:10.679 INFO  (qtp905080434-56) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=Movie_Name:horror&indent=true&q.op=OR&useParams=} hits=13 status=0 QTime=17
-2023-03-28 11:07:27.786 ERROR (qtp905080434-32) [ x:movie] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: Bad contentType for search handler :null request={q=Movie_Name:horror&indent=true&q.op=OR&useParams=} => org.apache.solr.common.SolrException: Bad contentType for search handler :null request={q=Movie_Name:horror&indent=true&q.op=OR&useParams=}
-	at org.apache.solr.request.json.RequestUtil.processParams(RequestUtil.java:86)
-org.apache.solr.common.SolrException: Bad contentType for search handler :null request={q=Movie_Name:horror&indent=true&q.op=OR&useParams=}
-	at org.apache.solr.request.json.RequestUtil.processParams(RequestUtil.java:86) ~[?:?]
-	at org.apache.solr.util.SolrPluginUtils.setDefaults(SolrPluginUtils.java:167) ~[?:?]
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:221) ~[?:?]
 	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2890) ~[?:?]
 	at org.apache.solr.servlet.HttpSolrCall.executeCoreRequest(HttpSolrCall.java:872) ~[?:?]
 	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:568) ~[?:?]
@@ -414,6 +143,10 @@ org.apache.solr.common.SolrException: Bad contentType for search handler :null r
 	at org.apache.solr.servlet.ServletUtils.rateLimitRequest(ServletUtils.java:227) ~[?:?]
 	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:215) ~[?:?]
 	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:197) ~[?:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-10.0.13.jar:10.0.13]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.13.jar:10.0.13]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:313) ~[jetty-servlets-10.0.13.jar:10.0.13]
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:267) ~[jetty-servlets-10.0.13.jar:10.0.13]
 	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:210) ~[jetty-servlet-10.0.13.jar:10.0.13]
 	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.13.jar:10.0.13]
 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-10.0.13.jar:10.0.13]
@@ -454,72 +187,257 @@ org.apache.solr.common.SolrException: Bad contentType for search handler :null r
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:934) ~[jetty-util-10.0.13.jar:10.0.13]
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1078) ~[jetty-util-10.0.13.jar:10.0.13]
 	at java.lang.Thread.run(Thread.java:1623) [?:?]
-2023-03-28 11:07:27.786 INFO  (qtp905080434-32) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=Movie_Name:horror&indent=true&q.op=OR&useParams=} status=400 QTime=11
-2023-03-28 11:07:35.892 ERROR (qtp905080434-39) [ x:movie] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: Bad contentType for search handler :null request={q=Movie_Name:horror&indent=true&q.op=OR&useParams=} => org.apache.solr.common.SolrException: Bad contentType for search handler :null request={q=Movie_Name:horror&indent=true&q.op=OR&useParams=}
-	at org.apache.solr.request.json.RequestUtil.processParams(RequestUtil.java:86)
-org.apache.solr.common.SolrException: Bad contentType for search handler :null request={q=Movie_Name:horror&indent=true&q.op=OR&useParams=}
-	at org.apache.solr.request.json.RequestUtil.processParams(RequestUtil.java:86) ~[?:?]
-	at org.apache.solr.util.SolrPluginUtils.setDefaults(SolrPluginUtils.java:167) ~[?:?]
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:221) ~[?:?]
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2890) ~[?:?]
-	at org.apache.solr.servlet.HttpSolrCall.executeCoreRequest(HttpSolrCall.java:872) ~[?:?]
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:568) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.dispatch(SolrDispatchFilter.java:252) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.lambda$doFilter$0(SolrDispatchFilter.java:220) ~[?:?]
-	at org.apache.solr.servlet.ServletUtils.traceHttpRequestExecution2(ServletUtils.java:257) ~[?:?]
-	at org.apache.solr.servlet.ServletUtils.rateLimitRequest(ServletUtils.java:227) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:215) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:197) ~[?:?]
-	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:210) ~[jetty-servlet-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:131) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:578) ~[jetty-security-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:223) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1570) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1383) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1543) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1305) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:149) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:228) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:141) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:301) ~[jetty-rewrite-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:822) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:140) ~[jetty-util-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) ~[jetty-util-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:934) ~[jetty-util-10.0.13.jar:10.0.13]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1078) ~[jetty-util-10.0.13.jar:10.0.13]
-	at java.lang.Thread.run(Thread.java:1623) [?:?]
-2023-03-28 11:07:35.892 INFO  (qtp905080434-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=Movie_Name:horror&indent=true&q.op=OR&useParams=} status=400 QTime=1
-2023-03-28 11:08:04.962 INFO  (qtp905080434-56) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=Movie_Name:horror&indent=true&q.op=OR&useParams=} hits=13 status=0 QTime=1
-2023-03-28 11:51:31.416 INFO  (qtp905080434-33) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=Movie_Name:horror&indent=true&q.op=OR&useParams=} hits=13 status=0 QTime=26
-2023-03-28 11:51:47.734 INFO  (ShutdownMonitor) [] o.e.j.s.Server Stopped Server@7cbee484{STOPPING}[10.0.13,sto=0]
-2023-03-28 11:51:47.751 INFO  (ShutdownMonitor) [] o.e.j.s.AbstractConnector Stopped ServerConnector@7b139eab{HTTP/1.1, (http/1.1, h2c)}{127.0.0.1:8983}
-2023-03-28 11:51:47.834 INFO  (ShutdownMonitor) [] o.a.s.c.CoreContainer Shutting down CoreContainer instance=683523720
-2023-03-28 11:51:47.846 INFO  (coreCloseExecutor-24-thread-1) [ x:movie] o.a.s.c.SolrCore CLOSING SolrCore org.apache.solr.core.SolrCore@6397a935 movie
-2023-03-28 11:51:47.848 INFO  (coreCloseExecutor-24-thread-1) [ x:movie] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.movie tag=SolrCore@6397a935
-2023-03-28 11:51:47.895 INFO  (coreCloseExecutor-24-thread-1) [ x:movie] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2023-03-28 11:51:47.935 INFO  (ShutdownMonitor) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
-2023-03-28 11:51:47.948 INFO  (ShutdownMonitor) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
-2023-03-28 11:51:47.959 INFO  (ShutdownMonitor) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
-2023-03-28 11:51:48.015 INFO  (ShutdownMonitor) [] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@7692cd34{solr-jetty-context.xml,/solr,null,STOPPED}{C:\Users\User\Desktop\3.2\CZ4034 Information Retrieval\Assignment\CE-CZ4034-Information-Retrieval-Group-Project\Application\solr-9.2.0\server/solr-webapp/webapp}
+2023-03-29 15:05:11.623 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Namee:homy&amp;spellcheck=true&amp;spellcheck.build=true&amp;version=2.2&amp;indent=true&amp;spellcheck.count=10&amp;rows=100000000&amp;wt=json} status=400 QTime=0
+2023-03-29 15:05:30.518 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:homy&amp;spellcheck=true&amp;spellcheck.build=true&amp;version=2.2&amp;indent=true&amp;spellcheck.count=10&amp;rows=100000000&amp;wt=json} hits=0 status=0 QTime=109
+2023-03-29 15:06:32.402 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={spellcheck.q=channal&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=2&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=13
+2023-03-29 15:06:45.972 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={spellcheck.q=channal&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=2&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=13
+2023-03-29 15:07:23.562 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:channal&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=2&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=16
+2023-03-29 15:07:40.608 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=channal&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=2&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=10
+2023-03-29 15:07:46.111 INFO  (qtp1635378213-35) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:channal&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=2&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=11
+2023-03-29 15:09:05.504 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:channal&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.count=4&spellcheck.build=true} hits=0 status=0 QTime=6
+2023-03-29 15:09:14.050 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:horror&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.count=4&spellcheck.build=true} hits=13 status=0 QTime=4
+2023-03-29 15:09:29.519 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:horrol&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.count=4&spellcheck.build=true} hits=0 status=0 QTime=6
+2023-03-29 15:10:06.802 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:horror&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.count=4&spellcheck.build=true} hits=13 status=0 QTime=1
+2023-03-29 15:10:18.730 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:love&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.count=4&spellcheck.build=true} hits=65 status=0 QTime=2
+2023-03-29 15:10:24.291 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:lovv&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.count=4&spellcheck.build=true} hits=0 status=0 QTime=5
+2023-03-29 15:11:04.343 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:channal&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=4&spellcheck.build=true} hits=0 status=0 QTime=8
+2023-03-29 15:11:12.296 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:horrol&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=4&spellcheck.build=true} hits=0 status=0 QTime=6
+2023-03-29 15:11:35.403 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:channal&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=4&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=6
+2023-03-29 15:11:42.063 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:horrol&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=4&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=6
+2023-03-29 15:12:03.775 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:horrol&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=10&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=8
+2023-03-29 15:12:13.419 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:horrol&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=6
+2023-03-29 15:12:30.181 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:horrol&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=3
+2023-03-29 15:41:40.925 INFO  (qtp1635378213-32) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&indent=true&fl=Movie_Name,Genre_s_,tmdb_Rating,User_Rating,Production_Company,Release_Date,Review_Content&q.op=OR&fq=Movie_Name:"Horror"&useParams=} hits=13 status=0 QTime=32
+2023-03-29 15:42:37.157 INFO  (qtp1635378213-41) [ x:movie] o.a.s.s.f.UnInvertedField UnInverted multi-valued field {field=distinctGenre,memSize=45172,tindexSize=46,time=9,phase1=9,nTerms=19,bigTerms=13,termInstances=1938,uses=0}
+2023-03-29 15:42:37.181 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=220
+2023-03-29 15:42:58.959 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=4
+2023-03-29 15:43:02.392 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 15:43:02.398 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 15:43:11.586 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:horrol&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=22
+2023-03-29 15:43:35.060 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:horror&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=1
+2023-03-29 15:43:52.026 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:horrol&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=4
+2023-03-29 15:44:44.563 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:horrol&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=15
+2023-03-29 15:45:36.943 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 15:45:38.386 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=2
+2023-03-29 15:45:56.662 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=10
+2023-03-29 15:46:23.515 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"exp"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=5
+2023-03-29 15:46:55.776 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 15:47:05.047 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=1
+2023-03-29 15:47:21.349 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 15:47:22.846 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=0
+2023-03-29 15:47:26.306 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 15:47:26.314 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 15:47:29.179 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=0
+2023-03-29 15:47:35.862 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=14
+2023-03-29 15:49:15.851 INFO  (qtp1635378213-34) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=5
+2023-03-29 15:52:27.401 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=3
+2023-03-29 15:52:29.588 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=5
+2023-03-29 15:53:33.614 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 15:53:37.838 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=1
+2023-03-29 15:53:40.328 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horro"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=17
+2023-03-29 15:53:45.611 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"hor"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=1
+2023-03-29 15:53:51.122 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"express"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=16 status=0 QTime=7
+2023-03-29 15:53:54.849 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"expr"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=4
+2023-03-29 15:54:15.634 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 15:54:17.112 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"expr"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=7
+2023-03-29 15:54:19.176 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"express"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=16 status=0 QTime=0
+2023-03-29 15:54:41.768 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 15:55:09.633 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 15:55:12.495 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"expres"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=5
+2023-03-29 15:55:29.562 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 15:55:30.753 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"expres"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=8
+2023-03-29 15:55:58.299 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=7
+2023-03-29 15:56:19.804 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=9
+2023-03-29 15:56:24.598 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORRO"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=3
+2023-03-29 15:56:30.429 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORROR"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=0
+2023-03-29 15:56:34.873 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORRO"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=9
+2023-03-29 15:56:40.342 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HOR"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=1
+2023-03-29 15:56:44.468 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HOR"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=1
+2023-03-29 15:57:13.219 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORRO"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=3
+2023-03-29 15:57:15.471 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORRO"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=3
+2023-03-29 15:57:19.698 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORROL"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=3
+2023-03-29 15:57:24.326 INFO  (qtp1635378213-34) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORRO"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=7
+2023-03-29 15:57:25.299 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORR"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=4
+2023-03-29 15:57:26.328 INFO  (qtp1635378213-34) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HOR"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=0
+2023-03-29 15:57:32.549 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORROR"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=1
+2023-03-29 15:57:35.364 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORRO"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=3
+2023-03-29 15:57:37.380 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORR"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=2
+2023-03-29 15:57:50.803 INFO  (qtp1635378213-34) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 15:57:51.781 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORR"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=4
+2023-03-29 15:58:22.272 INFO  (qtp1635378213-34) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 15:58:23.155 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORR"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=2
+2023-03-29 15:58:33.766 INFO  (qtp1635378213-34) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 15:58:36.406 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORR"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=3
+2023-03-29 15:58:40.976 INFO  (qtp1635378213-34) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORRor"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=0
+2023-03-29 15:59:23.918 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORRor"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=0
+2023-03-29 15:59:41.807 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 15:59:42.843 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORRor"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=1
+2023-03-29 15:59:44.778 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORRo"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=7
+2023-03-29 15:59:46.169 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HORR"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=5
+2023-03-29 15:59:47.457 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HOR"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=2
+2023-03-29 15:59:48.741 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HO"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=1
+2023-03-29 16:00:01.867 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HO"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=1
+2023-03-29 16:00:37.963 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=9
+2023-03-29 16:00:38.911 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"HO"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=1
+2023-03-29 16:00:42.537 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:""&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=35
+2023-03-29 16:00:44.315 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:""&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=2
+2023-03-29 16:00:46.416 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:00:46.423 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:00:47.852 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:""&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=0
+2023-03-29 16:00:49.104 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"x"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=32 status=0 QTime=3
+2023-03-29 16:00:55.032 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"love"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=65 status=0 QTime=3
+2023-03-29 16:01:10.936 INFO  (qtp1635378213-34) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 16:01:20.177 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:01:21.071 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"love"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=65 status=0 QTime=0
+2023-03-29 16:01:23.083 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lov"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=2
+2023-03-29 16:01:33.726 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lo"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=1
+2023-03-29 16:01:37.676 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:01:37.692 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=11
+2023-03-29 16:01:41.276 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:""&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=0
+2023-03-29 16:01:42.361 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"love"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=65 status=0 QTime=0
+2023-03-29 16:01:43.987 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lov"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=2
+2023-03-29 16:02:09.631 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:02:11.186 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lov"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=1
+2023-03-29 16:02:12.328 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lov"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=0
+2023-03-29 16:02:17.679 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=7
+2023-03-29 16:02:18.694 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lov"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=1
+2023-03-29 16:02:24.626 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:02:26.657 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lov"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=1
+2023-03-29 16:02:29.173 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"love"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=65 status=0 QTime=1
+2023-03-29 16:02:30.903 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lov"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=0
+2023-03-29 16:02:33.130 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=0
+2023-03-29 16:02:34.019 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horro"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=3
+2023-03-29 16:02:42.989 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"love"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=65 status=0 QTime=0
+2023-03-29 16:02:44.870 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lo"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=2
+2023-03-29 16:02:47.848 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lov"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=0
+2023-03-29 16:02:51.190 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lovv"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=2
+2023-03-29 16:03:05.583 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 16:03:13.630 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=4
+2023-03-29 16:03:15.250 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lovv"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=3
+2023-03-29 16:03:34.264 INFO  (qtp1635378213-34) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:03:34.929 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lovv"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=8
+2023-03-29 16:03:44.101 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=7
+2023-03-29 16:04:46.993 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=16
+2023-03-29 16:04:48.131 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=2
+2023-03-29 16:05:02.812 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:05:03.519 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=8
+2023-03-29 16:05:46.931 INFO  (qtp1635378213-34) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:05:48.582 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=3
+2023-03-29 16:05:58.932 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=1
+2023-03-29 16:25:45.043 INFO  (qtp1635378213-34) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=10
+2023-03-29 16:25:56.954 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=4
+2023-03-29 16:25:57.527 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=4
+2023-03-29 16:29:24.049 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:29:27.063 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=2
+2023-03-29 16:29:43.997 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 16:29:44.004 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 16:29:48.225 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=0
+2023-03-29 16:29:58.942 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 16:29:58.949 INFO  (qtp1635378213-62) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:30:04.166 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=1
+2023-03-29 16:32:08.866 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=4
+2023-03-29 16:32:08.872 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:32:11.521 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=0
+2023-03-29 16:32:19.733 INFO  (qtp1635378213-62) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:32:19.739 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:32:23.504 INFO  (qtp1635378213-62) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=7
+2023-03-29 16:32:53.570 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:32:53.576 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:32:59.894 INFO  (qtp1635378213-62) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=1
+2023-03-29 16:33:05.316 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=2
+2023-03-29 16:33:39.328 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:33:39.333 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:36:50.988 INFO  (qtp1635378213-62) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:36:50.995 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:36:58.611 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:37:26.614 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:37:38.630 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:38:12.628 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=4
+2023-03-29 16:38:17.124 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=2
+2023-03-29 16:38:20.178 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=8
+2023-03-29 16:38:44.616 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=5
+2023-03-29 16:38:44.626 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:38:50.533 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=0
+2023-03-29 16:38:52.857 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=13
+2023-03-29 16:39:01.599 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:39:01.859 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=10
+2023-03-29 16:39:09.454 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=4
+2023-03-29 16:39:18.859 INFO  (qtp1635378213-62) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=8
+2023-03-29 16:41:22.006 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:41:23.880 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=14
+2023-03-29 16:41:33.578 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=4
+2023-03-29 16:41:34.533 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=18
+2023-03-29 16:41:56.894 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=4
+2023-03-29 16:41:56.910 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=6
+2023-03-29 16:41:58.495 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=0
+2023-03-29 16:42:02.236 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=8
+2023-03-29 16:43:18.944 INFO  (qtp1635378213-62) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:43:18.949 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:43:22.125 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=1
+2023-03-29 16:43:23.641 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=5
+2023-03-29 16:43:35.966 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 16:43:36.753 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=4
+2023-03-29 16:43:56.552 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:43:56.560 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 16:44:41.941 INFO  (qtp1635378213-62) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 16:44:44.789 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=1
+2023-03-29 16:44:47.327 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horro"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=11
+2023-03-29 16:45:23.665 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:45:29.830 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:45:31.239 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horro"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=13
+2023-03-29 16:45:46.732 INFO  (qtp1635378213-37) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 16:45:47.555 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horro"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=7
+2023-03-29 16:45:53.042 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=1
+2023-03-29 16:45:55.964 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"love"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=65 status=0 QTime=0
+2023-03-29 16:45:57.731 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lov"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=2
+2023-03-29 16:46:00.924 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"lovv"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=3
+2023-03-29 16:46:18.615 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:46:26.814 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=5
+2023-03-29 16:46:44.634 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:46:59.843 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:47:01.228 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=7
+2023-03-29 16:47:15.630 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:50:53.928 INFO  (qtp1635378213-62) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 16:50:59.414 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=5
+2023-03-29 16:51:16.251 INFO  (qtp1635378213-62) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:51:33.895 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:51:49.212 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:51:53.755 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=0
+2023-03-29 16:51:57.125 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horrol"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=8
+2023-03-29 16:52:00.289 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horton"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=1 status=0 QTime=23
+2023-03-29 16:52:08.610 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:52:17.924 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horto"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=9
+2023-03-29 16:52:54.595 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:53:16.436 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:53:41.439 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 16:54:06.648 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=4
+2023-03-29 16:55:37.924 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=3
+2023-03-29 16:56:18.934 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:56:33.716 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 16:56:48.613 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 16:57:21.899 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=4
+2023-03-29 16:58:27.618 INFO  (qtp1635378213-38) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horton"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=1 status=0 QTime=10
+2023-03-29 17:00:01.969 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 17:00:03.543 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horton"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=1 status=0 QTime=8
+2023-03-29 17:00:04.814 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horto"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=5
+2023-03-29 17:00:08.451 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horton"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=1 status=0 QTime=10
+2023-03-29 17:00:09.875 INFO  (qtp1635378213-61) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"horto"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=5
+2023-03-29 17:00:48.007 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=2
+2023-03-29 17:00:51.403 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 17:00:51.408 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=1
+2023-03-29 17:00:53.291 INFO  (qtp1635378213-64) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horror"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=13 status=0 QTime=0
+2023-03-29 17:00:54.499 INFO  (qtp1635378213-40) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"Horro"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=4
+2023-03-29 17:01:48.607 INFO  (qtp1635378213-41) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"harry"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=11 status=0 QTime=6
+2023-03-29 17:01:52.285 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"harr"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=0 status=0 QTime=29
+2023-03-29 17:04:59.964 INFO  (qtp1635378213-39) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&json.facet={distinctGenre:{type:terms,field:distinctGenre,limit:10000,missing:false,sort:{index:asc},facet:{}}}&facet.field={!key%3DdistinctGenre}distinctGenre&rows=0&facet=on&wt=json} hits=9887 status=0 QTime=22
+2023-03-29 17:05:23.187 INFO  (qtp1635378213-65) [ x:movie] o.a.s.c.S.Request webapp=/solr path=/spell params={q=Movie_Name:"harry"&spellcheck=true&spellcheck.accuracy=0.6&spellcheck.onlyMorePopular=true&spellcheck.count=3&spellcheck.reload=true&spellcheck.build=true} hits=11 status=0 QTime=22
+2023-03-29 17:06:51.229 INFO  (ShutdownMonitor) [] o.e.j.s.Server Stopped Server@7bb3a9fe{STOPPING}[10.0.13,sto=0]
+2023-03-29 17:06:51.248 INFO  (ShutdownMonitor) [] o.e.j.s.AbstractConnector Stopped ServerConnector@30ea8c23{HTTP/1.1, (http/1.1, h2c)}{127.0.0.1:8983}
+2023-03-29 17:06:51.361 INFO  (ShutdownMonitor) [] o.a.s.c.CoreContainer Shutting down CoreContainer instance=683523720
+2023-03-29 17:06:51.375 INFO  (coreCloseExecutor-18-thread-1) [ x:movie] o.a.s.c.SolrCore CLOSING SolrCore org.apache.solr.core.SolrCore@1d6fa739 movie
+2023-03-29 17:06:51.377 INFO  (coreCloseExecutor-18-thread-1) [ x:movie] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.movie tag=SolrCore@1d6fa739
+2023-03-29 17:06:51.432 INFO  (coreCloseExecutor-18-thread-1) [ x:movie] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2023-03-29 17:06:51.501 INFO  (ShutdownMonitor) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
+2023-03-29 17:06:51.518 INFO  (ShutdownMonitor) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
+2023-03-29 17:06:51.538 INFO  (ShutdownMonitor) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
+2023-03-29 17:06:51.580 INFO  (ShutdownMonitor) [] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@27a0a5a2{solr-jetty-context.xml,/solr,null,STOPPED}{C:\Users\User\Desktop\solr-9.2.0\server/solr-webapp/webapp}
